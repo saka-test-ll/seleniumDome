@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [All Test Suite]">
+  <test thread-count="5" name="E:/Helloworld/test/work/8357/SECSYS0524/SeleniumDemo(failed)">
+    <classes>
+      <class name="testCase.Login">
+        <methods>
+          <include name="orderBuyNowPro"/>
+          <include name="testLogin"/>
+          <include name="getLoginHome"/>
+        </methods>
+      </class> <!-- testCase.Login -->
+    </classes>
+  </test> <!-- E:/Helloworld/test/work/8357/SECSYS0524/SeleniumDemo(failed) -->
+</suite> <!-- Failed suite [All Test Suite] -->
