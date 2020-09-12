@@ -3,14 +3,14 @@ package testCase;
 import Base.DriverBase;
 import Utils.HandleCookie;
 import Utils.ProUtil;
-import busession.*;
+import business.*;
 import org.apache.log4j.Logger;
 import org.testng.annotations.*;
 
 public class Login extends CaseBase{
     public DriverBase driver;
-    public LoginBusession loginBusession;
-    public HomeBusession homeBusession;
+    public LoginBusiness loginBusession;
+    public HomeBusiness homeBusession;
     public ProUtil proUtil;
     public HandleCookie handleCookie;
 
@@ -23,11 +23,10 @@ public class Login extends CaseBase{
     public void getLoginHome(){
         this.driver = InitDriver("chrome");
         proUtil = new ProUtil("src\\main\\resources\\loginTest.properties");
-        loginBusession = new LoginBusession(driver);
-        homeBusession = new HomeBusession(driver);
+        loginBusession = new LoginBusiness(driver);
+        homeBusession = new HomeBusiness(driver);
         handleCookie = new HandleCookie(driver);
         driver.getUrl(proUtil.getPro("url"));
-        homeBusession.dengLuButtom();
         driver.windowMax();
         try {
             Thread.sleep(3000);
@@ -40,10 +39,8 @@ public class Login extends CaseBase{
      *  测试用户登录
      */
     @Test
-    @Parameters({"userName","passWord"})
+//    @Parameters({"userName","passWord"})
     public void testLogin(String userName,String passWord){
-        //打印日志
-        logger.debug("打印日志");
         loginBusession.login(userName,passWord);
         try {
             Thread.sleep(3000);

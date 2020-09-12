@@ -32,13 +32,6 @@ public class LoginPage extends BasePage {
     }
 
     /**
-     *  获取自动登录Element
-     */
-    public WebElement getAutoSigninElement(){
-        return element(GetByLocator.getLocator("autoSigninKey"));
-    }
-
-    /**
      *  获取登录界面登录按钮Element
      */
     public WebElement getLoginButtonElement(){

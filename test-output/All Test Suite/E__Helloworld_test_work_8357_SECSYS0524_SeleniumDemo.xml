@@ -14,7 +14,7 @@ Driver info: org.openqa.selenium.chrome.ChromeDriver
 Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 81.0.4044.129, chrome: {chromedriverVersion: 81.0.4044.69 (6813546031a4b..., userDataDir: C:\Users\ADMINI~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:54470}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
 Session ID: d07d6f2c76aeb4791ee51f1844da3b60
 *** Element info: {Using=class name, value=sale-price}">
-      <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":".sale\-price"}
+        <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":".sale\-price"}
   (Session info: chrome=81.0.4044.129)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
@@ -41,7 +41,7 @@ at Base.DriverBase.findElement(DriverBase.java:32)
 at Base.BasePage.element(BasePage.java:25)
 at page.CoursePage.getCoursePriceElement(CoursePage.java:56)
 at handle.CourseHandle.coursePrice(CourseHandle.java:64)
-at busession.CourseBusession.courseBugPlayPro(CourseBusession.java:33)
+at business.CourseBusession.courseBugPlayPro(CourseBusession.java:33)
 at testCase.Login.orderBuyNowPro(Login.java:76)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
