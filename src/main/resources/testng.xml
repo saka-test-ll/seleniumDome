@@ -5,5 +5,12 @@
         <listener class-name="Utils.RetryListener" />
         <listener class-name="Utils.TestngListenerScreenShot" />
     </listeners>
-
+    <test verbose="2" preserve-order="true" name="E:/Helloworld/test/work/8357/SECSYS0524/SeleniumDemo">
+        <parameter name="userName" value="13996600141"/>
+        <parameter name="passWord" value="z1169542314"/>
+        <classes>
+            <class name="testCase.Login"></class>
+            <class name="testCase.testCourseList"></class>
+        </classes>
+    </test>
 </suite>
