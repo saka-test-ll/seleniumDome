@@ -1,8 +1,8 @@
-package src.java.testCase;
+package testCase;
 
-import src.java.Base.DriverBase;
-import src.java.Utils.HandleCookie;
-import src.java.Utils.ProUtil;
+import Base.DriverBase;
+import Utils.HandleCookie;
+import Utils.ProUtil;
 import business.*;
 import org.apache.log4j.Logger;
 import org.testng.annotations.AfterClass;

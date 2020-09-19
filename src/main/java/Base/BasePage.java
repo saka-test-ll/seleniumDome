@@ -1,4 +1,4 @@
-package src.java.Base;
+package Base;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -8,13 +8,13 @@ import org.openqa.selenium.WebElement;
  */
 public class BasePage {
 
-    public DriverBase driver;
+    public Base.DriverBase driver;
 
     /**
      *  构造方法
      * @param driver
      */
-    public BasePage(DriverBase driver){
+    public BasePage(Base.DriverBase driver){
         this.driver = driver;
     }
 

@@ -1,4 +1,4 @@
-package src.java.Utils;
+package Utils;
 
 import java.io.*;
 import java.util.Properties;

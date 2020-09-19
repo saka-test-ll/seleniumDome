@@ -1,4 +1,4 @@
-package src.java.Utils;
+package Utils;
 
 import org.openqa.selenium.By;
 
@@ -10,7 +10,7 @@ public class GetByLocator {
     public static By getLocator(String key){
 
         //调用配置文件
-        ProUtil properties = new ProUtil("src\\main\\resources\\element.properties");
+        Utils.ProUtil properties = new Utils.ProUtil("src\\main\\resources\\element.properties");
         String locator = properties.getPro(key);
         String locatorType = locator.split(">")[0];
         String locatorValue = locator.split(">")[1];

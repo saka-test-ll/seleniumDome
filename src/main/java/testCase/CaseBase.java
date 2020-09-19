@@ -1,6 +1,6 @@
-package src.java.testCase;
+package testCase;
 
-import src.java.Base.DriverBase;
+import Base.DriverBase;
 
 public class CaseBase {
     public DriverBase driver;

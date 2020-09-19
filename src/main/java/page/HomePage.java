@@ -1,8 +1,8 @@
-package src.java.page;
+package page;
 
-import src.java.Base.BasePage;
-import src.java.Base.DriverBase;
-import src.java.Utils.GetByLocator;
+import Base.BasePage;
+import Base.DriverBase;
+import Utils.GetByLocator;
 import org.openqa.selenium.WebElement;
 
 public class HomePage extends BasePage {

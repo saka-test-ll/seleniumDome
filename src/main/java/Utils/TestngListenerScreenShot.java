@@ -1,9 +1,9 @@
-package src.java.Utils;
+package Utils;
 
 import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.TestListenerAdapter;
-import src.java.testCase.CaseBase;
+import testCase.CaseBase;
 
 public class TestngListenerScreenShot extends TestListenerAdapter {
 

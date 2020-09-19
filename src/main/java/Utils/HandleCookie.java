@@ -1,6 +1,6 @@
-package src.java.Utils;
+package Utils;
 
-import src.java.Base.DriverBase;
+import Base.DriverBase;
 import org.openqa.selenium.Cookie;
 
 import java.util.Set;
@@ -8,11 +8,11 @@ import java.util.Set;
 public class HandleCookie {
 
     public DriverBase driver;
-    public ProUtil proUtil;
+    public Utils.ProUtil proUtil;
 
     public HandleCookie(DriverBase driver){
         this.driver = driver;
-        proUtil = new ProUtil("src\\main\\resources\\cookie.properties");
+        proUtil = new Utils.ProUtil("src\\main\\resources\\cookie.properties");
     }
 
     /**

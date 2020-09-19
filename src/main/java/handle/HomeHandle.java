@@ -1,7 +1,7 @@
-package src.java.handle;
+package handle;
 
-import src.java.Base.DriverBase;
-import src.java.page.HomePage;
+import Base.DriverBase;
+import page.HomePage;
 
 public class HomeHandle {
 
@@ -16,7 +16,9 @@ public class HomeHandle {
     /**
      *  获取个人信息用户昵称
      */
-    public String getLoginUsername(){ return homePage.getText(homePage.getLoginUsername()); }
+    public String getLoginUsername(){
+        return homePage.getText(homePage.getLoginUsername());
+    }
 
 }
 

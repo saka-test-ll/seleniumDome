@@ -1,4 +1,4 @@
-package src.java.Base;
+package Base;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
@@ -14,7 +14,7 @@ import java.util.Set;
 public class DriverBase {
     public WebDriver driver;
     public DriverBase(String browser){
-        SelectDriver selectDriver = new SelectDriver();
+        Base.SelectDriver selectDriver = new Base.SelectDriver();
         this.driver = selectDriver.driverName(browser);
     }
 

@@ -1,4 +1,4 @@
-package common.conndb;
+package Base;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 
 public class oracle {
     public static  String txnstacd ;
-    @test
+    @Test
     public static  void connoracle(String orderid) throws Exception{
         Connection con = null;// 创建一个数据库连接
         PreparedStatement pre1 = null;// 创建预编译语句对象，一般都是用这个而不用Statement

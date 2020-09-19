@@ -1,7 +1,7 @@
-package src.java.handle;
+package handle;
 
-import src.java.Base.DriverBase;
-import src.java.page.LoginPage;
+import Base.DriverBase;
+import page.LoginPage;
 
 /**
  *  操作层
@@ -23,12 +23,16 @@ public class LoginHandle {
     /**
      *  输入用户名
      */
-    public void sendKeyUsername(String userName){ loginPage.sendKeys(loginPage.getUsernameElement(),userName); }
+    public void sendKeyUsername(String userName){
+        loginPage.sendKeys(loginPage.getUsernameElement(),userName);
+    }
 
     /**
      *  输入密码
      */
-    public void sendKeyPassword(String passWord){ loginPage.sendKeys(loginPage.getPasswordElement(),passWord); }
+    public void sendKeyPassword(String passWord){
+        loginPage.sendKeys(loginPage.getPasswordElement(),passWord);
+    }
 
     /**
      *  点击登录界面登录按钮

@@ -1,4 +1,4 @@
-package common.listener;
+package Utils;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
@@ -14,7 +14,7 @@ public class RetryListener implements IAnnotationTransformer {
         IRetryAnalyzer retry = annotation.getRetryAnalyzer();
         if (retry == null) {
             //annotation.setRetryAnalyzer(RetryAnalyzer.class);
-            annotation.setRetryAnalyzer(TestngRetry.class); //监听RetryFail类
+            annotation.setRetryAnalyzer(Utils.TestngRetry.class); //监听RetryFail类
         }
     }
 

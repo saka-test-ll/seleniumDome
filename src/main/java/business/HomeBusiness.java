@@ -1,7 +1,7 @@
-package src.java.business;
+package business;
 
-import src.java.Base.DriverBase;
-import src.java.handle.HomeHandle;
+import Base.DriverBase;
+import handle.HomeHandle;
 
 public class HomeBusiness {
 
