@@ -1,7 +1,10 @@
 package Base;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
+import testCase.Login;
 
 /**
  *  封装页面可能用到的操作方法
@@ -9,6 +12,7 @@ import org.openqa.selenium.WebElement;
 public class BasePage {
 
     public Base.DriverBase driver;
+    static Logger logger;
 
     /**
      *  构造方法
@@ -16,6 +20,7 @@ public class BasePage {
      */
     public BasePage(Base.DriverBase driver){
         this.driver = driver;
+        logger = Logger.getLogger(Login.class);
     }
 
     /**
@@ -23,7 +28,13 @@ public class BasePage {
      */
     public WebElement element(By by){
         WebElement element = driver.findElement(by);
-        return element;
+        Assert.assertNotNull(element,"未定位到"+ by + "元素");
+        if(element != null){
+            return element;
+        }else {
+            logger.error("未定位到"+ by + "元素");
+            return null;
+        }
     }
 
     /**
@@ -32,7 +43,19 @@ public class BasePage {
      */
     public WebElement nodeElement(By by,By nodeby){
         WebElement el = this.element(by);
-        return el.findElement(nodeby);
+        Assert.assertNotNull(el,"未定位到"+ by + "元素");
+        if(el != null){
+            WebElement nodebyElement = el.findElement(nodeby);
+            Assert.assertNotNull(nodebyElement,"未定位到"+ nodeby + "元素");
+            if(nodebyElement != null){
+                return nodebyElement;
+            }else {
+                return null;
+            }
+        }else {
+            logger.error("未定位到"+ by + "元素");
+            return null;
+        }
     }
 
     /**
@@ -53,7 +76,7 @@ public class BasePage {
         if(element != null){
             element.sendKeys(value);
         }else{
-            System.out.println(element+"元素没有定位到，输入失败"+value);
+            System.out.println("元素没有定位到，输入" + value + "失败");
         }
     }
 

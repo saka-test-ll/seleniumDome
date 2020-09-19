@@ -34,7 +34,7 @@ public class CreateUserPage extends BasePage {
 
     //进入新建用户的基本信息页签Element
     public WebElement getBasicInfoElement(){
-        return element(GetByLocator.getLocator("BasicInfo"));
+        return element(GetByLocator.getLocator("basicInfo"));
     }
 
     //获取账号输入框Element
@@ -59,22 +59,22 @@ public class CreateUserPage extends BasePage {
 
     //获取选择组织Element
     public WebElement getselectOrgElement(){
-        return element(GetByLocator.getLocator("SelectOrg"));
+        return element(GetByLocator.getLocator("selectOrg"));
     }
 
     //进入新建用户添加组织按钮Element
     public WebElement getAddOrgButtonElement(){
-        return element(GetByLocator.getLocator("AddOrgButton"));
+        return element(GetByLocator.getLocator("addOrgButton"));
     }
 
     //选择主组织Element
     public WebElement getselectPrimaryOrigElement(){
-        return element(GetByLocator.getLocator("SelectPrimaryOrig"));
+        return element(GetByLocator.getLocator("selectPrimaryOrig"));
     }
 
     //进入新建用户保存按钮Element
     public WebElement getSaveUserButtonElement(){
-        return element(GetByLocator.getLocator("SaveUserButton"));
+        return element(GetByLocator.getLocator("saveUserButton"));
     }
 
 }
