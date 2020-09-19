@@ -1,0 +1,38 @@
+package src.java.page;
+
+import src.java.Base.BasePage;
+import src.java.Base.DriverBase;
+import src.java.Utils.GetByLocator;
+import org.openqa.selenium.WebElement;
+
+/**
+ *  元素层
+ */
+public class LoginPage extends BasePage {
+    /**
+     *  构造方法
+     * @param driver
+     */
+    public LoginPage(DriverBase driver){
+        super(driver);
+    }
+
+    /**
+     *  获取用户名输入框Element
+     */
+    public WebElement getUsernameElement(){ return element(GetByLocator.getLocator("userName")); }
+
+    /**
+     *  获取密码输入框Element
+     */
+    public WebElement getPasswordElement(){
+        return element(GetByLocator.getLocator("passWord"));
+    }
+
+    /**
+     *  获取登录界面登录按钮Element
+     */
+    public WebElement getLoginButtonElement(){
+        return element(GetByLocator.getLocator("loginButton"));
+    }
+}
