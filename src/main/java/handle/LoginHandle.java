@@ -23,16 +23,12 @@ public class LoginHandle {
     /**
      *  输入用户名
      */
-    public void sendKeyUsername(String userName){
-        loginPage.sendKeys(loginPage.getUsernameElement(),userName);
-    }
+    public void sendKeyUsername(String userName){ loginPage.sendKeys(loginPage.getUsernameElement(),userName); }
 
     /**
      *  输入密码
      */
-    public void sendKeyPassword(String passWord){
-        loginPage.sendKeys(loginPage.getPasswordElement(),passWord);
-    }
+    public void sendKeyPassword(String passWord){ loginPage.sendKeys(loginPage.getPasswordElement(),passWord); }
 
     /**
      *  点击登录界面登录按钮
@@ -40,20 +36,12 @@ public class LoginHandle {
     public void clickLoginButton(){
         loginPage.click(loginPage.getLoginButtonElement());
     }
-
-    /**
-     *  判断是否是登录界面
-     */
-//    public boolean assertLoginPage(){
-//        boolean usernameBoolean = loginPage.assertElementIs(loginPage.getUsernameElement());
-//        boolean passwordBoolean = loginPage.assertElementIs(loginPage.getPasswordElement());
-//        boolean loginButtonBoolean = loginPage.assertElementIs(loginPage.getLoginButtonElement());
-//        boolean asserLogin = usernameBoolean&passwordBoolean&loginButtonBoolean;
-//        if(asserLogin == true){
-//            return true;
-//        }else{
-//            return false;
-//        }
-//
-//    }
+    /*
+     * 判断是否是登录页面
+     * 判断标准:只要能够识别登录页面的一个输入框即可，这里使用用户名来识别
+     *
+     * */
+    public boolean assertLoginPage() {
+        return loginPage.assertElementIs(loginPage.getUsernameElement());
+    }
 }

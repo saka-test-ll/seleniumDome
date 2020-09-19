@@ -17,24 +17,19 @@ public class LoginPage extends BasePage {
         super(driver);
     }
 
-    /**
-     *  获取用户名输入框Element
-     */
-    public WebElement getUsernameElement(){
-        return element(GetByLocator.getLocator("userNameKey"));
-    }
+    //获取用户名输入框Element
 
-    /**
-     *  获取密码输入框Element
-     */
+    public WebElement getUsernameElement(){ return element(GetByLocator.getLocator("userName")); }
+
+    //获取密码输入框Element
+
     public WebElement getPasswordElement(){
-        return element(GetByLocator.getLocator("passWordKey"));
+        return element(GetByLocator.getLocator("passWord"));
     }
 
-    /**
-     *  获取登录界面登录按钮Element
-     */
+    //获取登录界面登录按钮Element
+
     public WebElement getLoginButtonElement(){
-        return element(GetByLocator.getLocator("loginButtonKey"));
+        return element(GetByLocator.getLocator("loginButton"));
     }
 }

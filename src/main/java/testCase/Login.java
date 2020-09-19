@@ -5,12 +5,16 @@ import Utils.HandleCookie;
 import Utils.ProUtil;
 import business.*;
 import org.apache.log4j.Logger;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
 
 public class Login extends CaseBase{
     public DriverBase driver;
-    public LoginBusiness loginBusession;
-    public HomeBusiness homeBusession;
+    public LoginBusiness loginBusiness;
+    public HomeBusiness homeBusiness;
     public ProUtil proUtil;
     public HandleCookie handleCookie;
 
@@ -23,8 +27,8 @@ public class Login extends CaseBase{
     public void getLoginHome(){
         this.driver = InitDriver("chrome");
         proUtil = new ProUtil("src\\main\\resources\\loginTest.properties");
-        loginBusession = new LoginBusiness(driver);
-        homeBusession = new HomeBusiness(driver);
+        loginBusiness = new LoginBusiness(driver);
+        homeBusiness = new HomeBusiness(driver);
         handleCookie = new HandleCookie(driver);
         driver.getUrl(proUtil.getPro("url"));
         driver.windowMax();
@@ -39,15 +43,16 @@ public class Login extends CaseBase{
      *  测试用户登录
      */
     @Test
-//    @Parameters({"userName","passWord"})
+    @Parameters({"userName","passWord"})
     public void testLogin(String userName,String passWord){
-        loginBusession.login(userName,passWord);
+        loginBusiness.login(userName,passWord);
         try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        if(homeBusession.assertNickName(proUtil.getPro("expectedResults"))){
+
+        if(homeBusiness.assertCurrentUser(proUtil.getPro("expectedName"))){
             System.out.println("登录成功" + userName);
             handleCookie.writeCookie();
         }else{
@@ -56,7 +61,9 @@ public class Login extends CaseBase{
     }
 
     @AfterClass
-    public void afterTest(){
-        driver.stop();
+    public void afterTest() {
+            driver.stop();
+        }
+
     }
-}
+

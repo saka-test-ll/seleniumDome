@@ -6,13 +6,13 @@ import java.util.Properties;
 public class ProUtil {
 
     private Properties prop;
-    private String filePaht;
+    private String filePath;
 
     /**
      * 构造方法
      */
-    public ProUtil(String filePaht){
-        this.filePaht = filePaht;
+    public ProUtil(String filePath){
+        this.filePath = filePath;
         this.prop = readProperties();
     }
 
@@ -22,7 +22,7 @@ public class ProUtil {
     private Properties readProperties(){
         Properties properties = new Properties();
         try {
-            InputStream inputStream = new FileInputStream(filePaht);
+            InputStream inputStream = new FileInputStream(filePath);
             BufferedInputStream in = new BufferedInputStream(inputStream);
             properties.load(in);
         } catch (IOException e) {
@@ -50,7 +50,7 @@ public class ProUtil {
     public void writePro(String key, String value) {
         Properties pro = new Properties();
         try {
-            FileOutputStream file = new FileOutputStream(filePaht);
+            FileOutputStream file = new FileOutputStream(filePath);
             pro.setProperty(key, value);
             pro.store(file, key);
         } catch (IOException e) {
