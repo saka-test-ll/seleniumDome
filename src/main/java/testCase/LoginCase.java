@@ -43,8 +43,11 @@ public class LoginCase extends CaseBase{
      *  正向测试用户登录
      */
     @Test
-    @Parameters({"userName","passWord"})
-    public void testLogin(String userName, String passWord){
+ //   @Parameters({"userName","passWord"})
+    public void testLogin(){
+        proUtil = new ProUtil("src\\main\\resources\\loginTest.properties");
+        String userName = proUtil.getPro("userName");
+        String passWord = proUtil.getPro("passWord");
         loginBusiness.login(userName,passWord);
         try {
             Thread.sleep(3000);
@@ -59,11 +62,12 @@ public class LoginCase extends CaseBase{
             logger.info("登录失败");
         }
     }
-
+/**
     @AfterClass
     public void afterTest() {
             driver.stop();
         }
+    */
 
     }
 
