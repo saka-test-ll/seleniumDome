@@ -11,14 +11,14 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 
-public class Login extends CaseBase{
+public class LoginCase extends CaseBase{
     public DriverBase driver;
     public LoginBusiness loginBusiness;
     public HomeBusiness homeBusiness;
     public ProUtil proUtil;
     public HandleCookie handleCookie;
 
-    static Logger logger = Logger.getLogger(Login.class);
+    static Logger logger = Logger.getLogger(LoginCase.class);
 
     /**
      *  进入网页并窗口最大化
@@ -40,11 +40,11 @@ public class Login extends CaseBase{
     }
 
     /**
-     *  测试用户登录
+     *  正向测试用户登录
      */
     @Test
     @Parameters({"userName","passWord"})
-    public void testLogin(String userName,String passWord){
+    public void testLogin(String userName, String passWord){
         loginBusiness.login(userName,passWord);
         try {
             Thread.sleep(3000);
@@ -53,10 +53,10 @@ public class Login extends CaseBase{
         }
 
         if(homeBusiness.assertCurrentUser(proUtil.getPro("expectedName"))){
-            System.out.println("登录成功" + userName);
+            logger.info("登录成功" + userName);
             handleCookie.writeCookie();
         }else{
-            System.out.println("登录失败");
+            logger.info("登录失败");
         }
     }
 

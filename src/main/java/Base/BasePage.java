@@ -4,7 +4,7 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-import testCase.Login;
+import testCase.LoginCase;
 
 /**
  *  封装页面可能用到的操作方法
@@ -20,7 +20,7 @@ public class BasePage {
      */
     public BasePage(Base.DriverBase driver){
         this.driver = driver;
-        logger = Logger.getLogger(Login.class);
+        logger = Logger.getLogger(LoginCase.class);
     }
 
     /**

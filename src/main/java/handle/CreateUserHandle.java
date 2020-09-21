@@ -7,7 +7,6 @@ import page.LoginPage;
 public class CreateUserHandle {
 
     public DriverBase driver;
-    public LoginPage loginPage;
     public CreateUserPage createUserPage;
 
     /**
@@ -19,14 +18,24 @@ public class CreateUserHandle {
         createUserPage = new CreateUserPage(driver);
     }
 
-    //进入用户中心菜单
+    //点击用户中心菜单项
     public void clickuserCenterMenu(){
         createUserPage.click(createUserPage.getUserCenterMenuElement());
     }
 
-    //进入用户管理菜单
+    //点击用户管理菜单项
     public void clickuserManagerMenu(){
         createUserPage.click(createUserPage.getUserManagerMenuElement());
+    }
+
+    //进入用户管理iframe页面
+    public void goToUserManagerIframe(){
+        driver.findIframeElement(createUserPage.getUserManagerIframe());
+    }
+
+    //退出用户管理iframe页面
+    public void outUserManagerIframe(){
+        driver.outIframeElement();
     }
 
     //点击新增用户
@@ -80,6 +89,7 @@ public class CreateUserHandle {
     }
 
     public boolean assertCreateUserPage() {
-        return createUserPage.assertElementIs(createUserPage.getAccountElement()); }
+        return createUserPage.assertElementIs(createUserPage.getAccountElement());
+    }
 
 }

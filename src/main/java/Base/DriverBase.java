@@ -35,6 +35,20 @@ public class DriverBase {
     }
 
     /**
+     *  封装切换进入iframe窗口
+     */
+    public WebDriver findIframeElement(WebElement iframe){
+        return driver.switchTo().frame("iframe");
+    }
+
+    /**
+     *  封装切换退出iframe窗口
+     */
+    public WebDriver outIframeElement(){
+        return driver.switchTo().defaultContent();
+    }
+
+    /**
      *  封装get方法
      */
     public void getUrl(String url){
