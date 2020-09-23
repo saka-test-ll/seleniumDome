@@ -16,7 +16,6 @@ public class LoginCase extends CaseBase{
     public HomeBusiness homeBusiness;
     public ProUtil proUtil;
     public HandleCookie handleCookie;
-    public CreateUserBusiness createUserBusiness;
 
     static Logger logger = Logger.getLogger(LoginCase.class);
 
@@ -30,7 +29,6 @@ public class LoginCase extends CaseBase{
         loginBusiness = new LoginBusiness(driver);
         homeBusiness = new HomeBusiness(driver);
         handleCookie = new HandleCookie(driver);
-        createUserBusiness = new CreateUserBusiness(driver);
         driver.getUrl(proUtil.getPro("url"));
         driver.windowMax();
         try {
