@@ -5,12 +5,10 @@
         <listener class-name="Utils.RetryListener" />
         <listener class-name="Utils.TestngListenerScreenShot" />
     </listeners>
-    <test verbose="2" preserve-order="true" name="D:\seleniumDome\YWKFPT">
-        <parameter name="userName" value="aa"/>
-        <parameter name="passWord" value="Aa12345678"/>
+    <test verbose="2" preserve-order="true" name="testCase">
         <classes>
             <class name="testCase.LoginCase"></class>
-            <class name="testCase.CreateUserCase"></class>
+            <class name="testCase.testCreateUserCase"></class>
         </classes>
     </test>
 </suite>

@@ -7,7 +7,6 @@ import business.*;
 import org.apache.log4j.Logger;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 
@@ -17,6 +16,7 @@ public class LoginCase extends CaseBase{
     public HomeBusiness homeBusiness;
     public ProUtil proUtil;
     public HandleCookie handleCookie;
+    public CreateUserBusiness createUserBusiness;
 
     static Logger logger = Logger.getLogger(LoginCase.class);
 
@@ -30,6 +30,7 @@ public class LoginCase extends CaseBase{
         loginBusiness = new LoginBusiness(driver);
         homeBusiness = new HomeBusiness(driver);
         handleCookie = new HandleCookie(driver);
+        createUserBusiness = new CreateUserBusiness(driver);
         driver.getUrl(proUtil.getPro("url"));
         driver.windowMax();
         try {
@@ -43,9 +44,10 @@ public class LoginCase extends CaseBase{
      *  正向测试用户登录
      */
     @Test
-    @Parameters({"userName","passWord"})
-    public void testLogin(String userName, String passWord){
-        loginBusiness.login(userName,passWord);
+    public void testLogin(){
+        String username = proUtil.getPro("userName");
+        String password = proUtil.getPro("passWord");
+        loginBusiness.login(username,password);
         try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {
@@ -53,7 +55,7 @@ public class LoginCase extends CaseBase{
         }
 
         if(homeBusiness.assertCurrentUser(proUtil.getPro("expectedName"))){
-            logger.info("登录成功" + userName);
+            logger.info("登录成功" + username);
             handleCookie.writeCookie();
         }else{
             logger.info("登录失败");

@@ -13,9 +13,11 @@ import java.util.Set;
  */
 public class DriverBase {
     public WebDriver driver;
+    public Actions action;
     public DriverBase(String browser){
-        Base.SelectDriver selectDriver = new Base.SelectDriver();
+        SelectDriver selectDriver = new SelectDriver();
         this.driver = selectDriver.driverName(browser);
+        action = new Actions(driver);
     }
 
     /**
@@ -32,6 +34,20 @@ public class DriverBase {
     public WebElement findElement(By by){
         WebElement element = driver.findElement(by);
         return element;
+    }
+
+    /**
+     *   封装鼠标悬停操作
+     */
+    public void moveToElement(WebElement element){
+        action.moveToElement(element).perform();
+    }
+
+    /**
+     *  鼠标左键点击事件
+     */
+    public void leftClickMouse(WebElement element){
+        action.click(element).perform();
     }
 
     /**
@@ -60,14 +76,6 @@ public class DriverBase {
      */
     public void windowMax(){
         driver.manage().window().maximize();
-    }
-
-    /**
-     *  封装实例化Actions函数
-     */
-    public Actions getActions(){
-        Actions actions = new Actions(driver);
-        return actions;
     }
 
     /**

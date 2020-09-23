@@ -1,6 +1,7 @@
 package handle;
 
 import Base.DriverBase;
+import org.openqa.selenium.interactions.Actions;
 import page.CreateUserPage;
 import page.LoginPage;
 
@@ -20,12 +21,12 @@ public class CreateUserHandle {
 
     //点击用户中心菜单项
     public void clickuserCenterMenu(){
-        createUserPage.click(createUserPage.getUserCenterMenuElement());
+        createUserPage.leftClickMouse(createUserPage.getUserCenterMenuElement());
     }
 
     //点击用户管理菜单项
     public void clickuserManagerMenu(){
-        createUserPage.click(createUserPage.getUserManagerMenuElement());
+        createUserPage.leftClickMouse(createUserPage.getUserManagerMenuElement());
     }
 
     //进入用户管理iframe页面

@@ -3,6 +3,7 @@ package Base;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import testCase.LoginCase;
 
@@ -11,14 +12,14 @@ import testCase.LoginCase;
  */
 public class BasePage {
 
-    public Base.DriverBase driver;
+    public DriverBase driver;
     static Logger logger;
 
     /**
      *  构造方法
      * @param driver
      */
-    public BasePage(Base.DriverBase driver){
+    public BasePage(DriverBase driver){
         this.driver = driver;
         logger = Logger.getLogger(LoginCase.class);
     }
@@ -91,7 +92,14 @@ public class BasePage {
      *   封装鼠标悬停操作
      */
     public void moveToElement(WebElement element){
-        driver.getActions().moveToElement(element).perform();
+        driver.moveToElement(element);
+    }
+
+    /**
+     *  鼠标左键点击事件
+     */
+    public void leftClickMouse(WebElement element){
+        driver.leftClickMouse(element);
     }
 
     /**

@@ -1,16 +1,27 @@
 package business;
 
+import Base.DriverBase;
 import handle.CreateUserHandle;
 
 public class CreateUserBusiness {
 
     public CreateUserHandle createUserHandle;
 
+    public CreateUserBusiness(DriverBase driver){
+        createUserHandle = new CreateUserHandle(driver);
+    }
+
     /**
-     *  点击用户中心-用户管理，进入用户管理界面
+     *  点击用户中心
+     */
+    public void goToUserCenterMenu(){
+        createUserHandle.clickuserCenterMenu();
+    }
+
+    /**
+     *  点击用户管理
      */
     public void goToUserManagerMenu(){
-        createUserHandle.clickuserCenterMenu();
         createUserHandle.clickuserManagerMenu();
     }
 

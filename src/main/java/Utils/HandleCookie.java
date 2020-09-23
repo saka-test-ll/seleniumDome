@@ -19,8 +19,8 @@ public class HandleCookie {
      *  读取配置文件中的cookie值
      */
     public void setCookie(){
-        String value = proUtil.getPro("apsid");
-        Cookie cookie = new Cookie("apsid",value,"imooc.com","/",null);
+        String value = proUtil.getPro("JSESSIONID");
+        Cookie cookie = new Cookie("JSESSIONID",value,"monotest.ccp.casic.cs","/",null);
         driver.setCookie(cookie);
     }
 
@@ -30,9 +30,20 @@ public class HandleCookie {
     public void writeCookie(){
         Set<Cookie> cookies = driver.getCookie();
         for(Cookie cookie:cookies){
-            if(cookie.getName().equals("apsid")){
+            if(cookie.getName().equals("JSESSIONID")){
                 proUtil.writePro(cookie.getName(),cookie.getValue());
             }
         }
     }
+
+    /**
+     *  清楚浏览器中的cookie
+     */
+    public void delectCookie(){
+        Set<Cookie> cookies = driver.getCookie();
+        //清除所有的缓存
+        driver.deleteCookie();
+    }
+
+
 }
