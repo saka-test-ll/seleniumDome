@@ -103,6 +103,13 @@ public class BasePage {
     }
 
     /**
+     *  进入iframe页面
+     */
+    public void findIframeElement(WebElement element){
+        driver.findIframeElement(element);
+    }
+
+    /**
      *  封装获取文本信息
      */
     public String getText(WebElement element){

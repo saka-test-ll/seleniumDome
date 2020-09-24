@@ -1,9 +1,7 @@
 package handle;
 
 import Base.DriverBase;
-import org.openqa.selenium.interactions.Actions;
 import page.CreateUserPage;
-import page.LoginPage;
 
 public class CreateUserHandle {
 
@@ -31,7 +29,7 @@ public class CreateUserHandle {
 
     //进入用户管理iframe页面
     public void goToUserManagerIframe(){
-        driver.findIframeElement(createUserPage.getUserManagerIframe());
+        createUserPage.findIframeElement(createUserPage.getUserManagerIframe());
     }
 
     //退出用户管理iframe页面
