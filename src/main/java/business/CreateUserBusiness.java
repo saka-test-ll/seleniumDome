@@ -46,13 +46,18 @@ public class CreateUserBusiness {
         createUserHandle.clickaddUserButton();
     }
 
+    //切换进入新增用户iframe页面
+    public void goToAddUserIframe(){createUserHandle.goToAddUserIframe();}
+
+    //切换退出新增用户iframen页面
+    public void outAddUserIframe(){createUserHandle.outAddUserFrame();}
+
+    public void goToBasicInfo(){createUserHandle.clickOrgInfo();}
+
 
     public void createuser(String account,String passwordin,String fullname){
         createUserHandle.sendKeyAccount(account);
         createUserHandle.sendKeypasswordin(passwordin);
         createUserHandle.sendKeyfullName(fullname);
     }
-
-
-
 }

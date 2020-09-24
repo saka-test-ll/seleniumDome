@@ -17,11 +17,13 @@ public class testCreateUserCase extends CaseBase {
     public void createUserBeforeClass(){
         this.driver = InitDriver("chrowe");
         proUtil = new ProUtil("src\\main\\resources\\loginTest.properties");
+        driver.implicitlywait();
         createUserBusiness = new CreateUserBusiness(driver);
         handleCookie = new HandleCookie(driver);
         driver.getUrl(proUtil.getPro("homeURL"));
         handleCookie.delectCookie();
         handleCookie.setCookie();
+        driver.implicitlywait();
         driver.getUrl(proUtil.getPro("homeURL"));
         driver.windowMax();
         try {
@@ -35,9 +37,21 @@ public class testCreateUserCase extends CaseBase {
     public void addUser(){
         //进入添加用户界面、切换iframe页面
         createUserBusiness.goToUserCenterMenu();
+        driver.implicitlywait();
         createUserBusiness.goToUserManagerMenu();
-//        createUserBusiness.goToUserManagerIframeMenu();
-//        createUserBusiness.goToAddUserManagerMenu();
+        driver.implicitlywait();
+        createUserBusiness.goToUserManagerIframeMenu();
+        driver.implicitlywait();
+        createUserBusiness.goToAddUserManagerMenu();
+        driver.implicitlywait();
+        createUserBusiness.goToAddUserIframe();
+        driver.implicitlywait();
+        createUserBusiness.goToBasicInfo();
+//      driver.implicitlywait();
+        String account = proUtil.getPro("account");
+        String passordin = proUtil.getPro("passwordin");
+        String fullname = proUtil.getPro("fullname");
+        createUserBusiness.createuser(account,passordin,fullname);
     }
 
     @AfterTest
@@ -45,11 +59,10 @@ public class testCreateUserCase extends CaseBase {
 //        createUserBusiness.outUserManagerIframeMenu();
     }
 
-
+/*
     @AfterClass
     public void createUserAfterClass(){
         driver.stop();
     }
-
-
+ */
 }

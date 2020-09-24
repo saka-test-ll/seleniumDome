@@ -42,8 +42,14 @@ public class CreateUserHandle {
         createUserPage.click(createUserPage.getAddUserButtonElement());
     }
 
+    //进入新增用户iframe页面
+    public void goToAddUserIframe(){driver.findIframeElement(createUserPage.getAddUserIfrme());}
+
+    //退出新增用户iframe页面
+    public void outAddUserFrame(){driver.outIframeElement();}
+
     //进入基本信息页签
-    public void LBClickbasicInfo(){
+    public void clickBasicInfo(){
         createUserPage.leftClickMouse(createUserPage.getBasicInfoElement());
     }
 
@@ -63,12 +69,12 @@ public class CreateUserHandle {
     }
 
     //进入组织选择页签
-    public void LBClickOrgInfo(){
+    public void clickOrgInfo(){
         createUserPage.leftClickMouse(createUserPage.getorgInfoElement());
     }
 
     //选择组织
-    public void LBClickSelectOrg(){
+    public void clickSelectOrg(){
         createUserPage.leftClickMouse(createUserPage.getselectOrgElement());
     }
 

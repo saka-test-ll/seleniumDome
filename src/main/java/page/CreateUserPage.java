@@ -37,6 +37,9 @@ public class CreateUserPage extends BasePage {
         return element(GetByLocator.getLocator("addUserButton"));
     }
 
+    //获取新建用户iframe页面Element元素
+    public WebElement getAddUserIfrme(){return  element(GetByLocator.getLocator("addUserIframe"));}
+
     //获取新建用户的基本信息页签Element元素
     public WebElement getBasicInfoElement(){
         return element(GetByLocator.getLocator("basicInfo"));
