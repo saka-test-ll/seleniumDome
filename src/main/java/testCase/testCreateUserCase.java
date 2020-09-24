@@ -47,11 +47,16 @@ public class testCreateUserCase extends CaseBase {
         createUserBusiness.goToAddUserIframe();
         driver.implicitlywait();
         createUserBusiness.goToBasicInfo();
-//      driver.implicitlywait();
+        driver.implicitlywait();
         String account = proUtil.getPro("account");
         String passordin = proUtil.getPro("passwordin");
         String fullname = proUtil.getPro("fullname");
         createUserBusiness.createuser(account,passordin,fullname);
+        createUserBusiness.goToOrgInfo();
+        createUserBusiness.goToelectOrg();
+        createUserBusiness.goToAddOrg();
+        createUserBusiness.goToSelectPrimaryOrg();
+        createUserBusiness.goTosaveUserButton();
     }
 
     @AfterTest

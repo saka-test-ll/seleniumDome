@@ -52,7 +52,7 @@ public class CreateUserBusiness {
     //切换退出新增用户iframen页面
     public void outAddUserIframe(){createUserHandle.outAddUserFrame();}
 
-    public void goToBasicInfo(){createUserHandle.clickOrgInfo();}
+    public void goToBasicInfo(){createUserHandle.clickBasicInfo();}
 
 
     public void createuser(String account,String passwordin,String fullname){
@@ -60,4 +60,17 @@ public class CreateUserBusiness {
         createUserHandle.sendKeypasswordin(passwordin);
         createUserHandle.sendKeyfullName(fullname);
     }
+    //进入组织信息
+    public void goToOrgInfo(){createUserHandle.clickOrgInfo();}
+    //选择组织
+    public void goToelectOrg(){createUserHandle.clickSelectOrg();}
+    //添加组织
+    public void goToAddOrg(){createUserHandle.clickaddOrgButton();}
+    //选择主组织
+    public void goToSelectPrimaryOrg(){createUserHandle.clickSelectPrimaryOrg();}
+    //保存新增用户
+    public void goTosaveUserButton(){createUserHandle.clicksaveUserButton();}
+
+
+
 }
