@@ -45,8 +45,8 @@ public class CreateUserHandle {
     }
 
     //进入基本信息页签
-    public void clickbasicInfo(){
-        createUserPage.click(createUserPage.getBasicInfoElement());
+    public void LBClickbasicInfo(){
+        createUserPage.leftClickMouse(createUserPage.getBasicInfoElement());
     }
 
     //输入账号
@@ -65,13 +65,13 @@ public class CreateUserHandle {
     }
 
     //进入组织选择页签
-    public void clickOrgInfo(){
-        createUserPage.click(createUserPage.getorgInfoElement());
+    public void LBClickOrgInfo(){
+        createUserPage.leftClickMouse(createUserPage.getorgInfoElement());
     }
 
     //选择组织
-    public void clickSelectOrg(){
-        createUserPage.click(createUserPage.getselectOrgElement());
+    public void LBClickSelectOrg(){
+        createUserPage.leftClickMouse(createUserPage.getselectOrgElement());
     }
 
     //添加组织
@@ -81,7 +81,7 @@ public class CreateUserHandle {
 
     //选择主组织
     public void clickSelectPrimaryOrg(){
-        createUserPage.click(createUserPage.getselectPrimaryOrigElement());
+        createUserPage.click(createUserPage.getselectPrimaryOrgElement());
     }
 
     //保存用户

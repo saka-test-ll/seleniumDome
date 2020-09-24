@@ -7,6 +7,7 @@ import org.openqa.selenium.interactions.Actions;
 import java.io.File;
 import java.io.IOException;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 /**
  *  产生driver对象
@@ -54,7 +55,7 @@ public class DriverBase {
      *  封装切换进入iframe窗口
      */
     public WebDriver findIframeElement(WebElement iframe){
-        return driver.switchTo().frame("iframe");
+        return driver.switchTo().frame(iframe);
     }
 
     /**
@@ -76,6 +77,11 @@ public class DriverBase {
      */
     public void windowMax(){
         driver.manage().window().maximize();
+    }
+
+   //封装浏览器隐式等待
+    public void implicitlywait(){
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     }
 
     /**

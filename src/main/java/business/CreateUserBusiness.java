@@ -46,4 +46,13 @@ public class CreateUserBusiness {
         createUserHandle.clickaddUserButton();
     }
 
+
+    public void createuser(String account,String passwordin,String fullname){
+        createUserHandle.sendKeyAccount(account);
+        createUserHandle.sendKeypasswordin(passwordin);
+        createUserHandle.sendKeyfullName(fullname);
+    }
+
+
+
 }

@@ -73,8 +73,8 @@ public class CreateUserPage extends BasePage {
     }
 
     //获取选择主组织Element元素
-    public WebElement getselectPrimaryOrigElement(){
-        return element(GetByLocator.getLocator("selectPrimaryOrig"));
+    public WebElement getselectPrimaryOrgElement(){
+        return element(GetByLocator.getLocator("selectPrimaryOrg"));
     }
 
     //获取新建用户保存按钮Element元素
