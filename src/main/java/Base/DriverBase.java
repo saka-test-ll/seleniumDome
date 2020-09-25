@@ -81,8 +81,11 @@ public class DriverBase {
 
    //封装浏览器隐式等待
     public void implicitlywait(){
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
+
+    //封装浏览器刷新当前窗口
+    public void refresh(){driver.navigate().refresh();}
 
     /**
      *  封装返回方法
