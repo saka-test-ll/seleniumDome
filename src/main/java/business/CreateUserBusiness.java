@@ -54,7 +54,6 @@ public class CreateUserBusiness {
 
     public void goToBasicInfo(){createUserHandle.clickBasicInfo();}
 
-
     public void createuser(String account,String passwordin,String fullname){
         createUserHandle.sendKeyAccount(account);
         createUserHandle.sendKeypasswordin(passwordin);
@@ -70,7 +69,12 @@ public class CreateUserBusiness {
     public void goToSelectPrimaryOrg(){createUserHandle.clickSelectPrimaryOrg();}
     //保存新增用户
     public void goTosaveUserButton(){createUserHandle.clicksaveUserButton();}
+    //保存用户成功后确定关闭弹出框
+    public void goTosaveUserSureButton(){createUserHandle.clicksaveUserSureButton();}
 
+    public void queryuser(String queryAccountBox){createUserHandle.sendKeyqueryAccountBox(queryAccountBox);}
 
+    //查询用户
+    public void goTOQueryUser(){createUserHandle.clickQueryUserButton();}
 
 }

@@ -85,5 +85,16 @@ public class CreateUserPage extends BasePage {
         return element(GetByLocator.getLocator("saveUserButton"));
     }
 
+    //新建用户成功后确定按钮
+    public WebElement getSaveUserSureButtonElement(){return element(GetByLocator.getLocator("saveUserSureBytton"));}
+
+    //获取查询时输入账号Element元素
+    public WebElement getQueryAccountBoxElement(){return element(GetByLocator.getLocator("queryAccountBox"));}
+
+    //获取查询用户按钮
+    public WebElement getQueryUserButtonElement(){return element(GetByLocator.getLocator("queryUserButton"));}
+
+
+
 }
 

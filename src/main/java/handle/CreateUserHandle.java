@@ -93,8 +93,15 @@ public class CreateUserHandle {
         createUserPage.click(createUserPage.getSaveUserButtonElement());
     }
 
-    public boolean assertCreateUserPage() {
-        return createUserPage.assertElementIs(createUserPage.getAccountElement());
+    //保存用户成功确定按钮
+    public void clicksaveUserSureButton(){createUserPage.click(createUserPage.getSaveUserSureButtonElement());}
+
+   //输入账号查询数据
+    public void sendKeyqueryAccountBox(String queryAccountBox){
+        createUserPage.sendKeys(createUserPage.getQueryAccountBoxElement(),queryAccountBox);
     }
+
+    //点击查询按钮
+    public void clickQueryUserButton(){createUserPage.click(createUserPage.getQueryUserButtonElement());}
 
 }
