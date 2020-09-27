@@ -3,23 +3,23 @@ package testCase;
 import Base.DriverBase;
 import Utils.HandleCookie;
 import Utils.ProUtil;
-import business.CreateUserBusiness;
+import business.CreateTableBusiness;
 import org.testng.annotations.*;
 
-public class testCreateUserCase extends CaseBase {
+public class CreateTableCase extends CaseBase {
 
     public DriverBase driver;
     public ProUtil proUtil;
     public HandleCookie handleCookie;
-    public CreateUserBusiness createUserBusiness;
+    public CreateTableBusiness createTableBusiness;
 
     @BeforeClass
-    public void createUserBeforeClass(){
+    public void createTableBeforeClass(){
         this.driver = InitDriver("chrowe");
         driver.implicitlywait();
         proUtil = new ProUtil("src\\main\\resources\\loginTest.properties");
         driver.implicitlywait();
-        createUserBusiness = new CreateUserBusiness(driver);
+        createTableBusiness = new CreateTableBusiness(driver);
         driver.implicitlywait();
         handleCookie = new HandleCookie(driver);
         driver.implicitlywait();
@@ -37,37 +37,38 @@ public class testCreateUserCase extends CaseBase {
     @Test()
     public void addUser() {
         //进入添加用户界面、切换iframe页面
-        createUserBusiness.goToUserCenterMenu();
+        createTableBusiness.goToflowManagerMenu();
         driver.implicitlywait();
-        createUserBusiness.goToUserManagerMenu();
+        createTableBusiness.goTOformManagerMenu();
         driver.implicitlywait();
-        createUserBusiness.goToUserManagerIframeMenu();
+        createTableBusiness.goTotableMenu();
         driver.implicitlywait();
-        createUserBusiness.goToAddUserManagerMenu();
+        createTableBusiness.goTotableIframe();
         driver.implicitlywait();
-        createUserBusiness.goToAddUserIframe();
+        createTableBusiness.goToaddTableButton();
         driver.implicitlywait();
-        createUserBusiness.goToBasicInfo();
+        createTableBusiness.goToaddTableIframe();
         driver.implicitlywait();
-        String account = proUtil.getPro("account");
-        String passordin = proUtil.getPro("passwordin");
-        String fullname = proUtil.getPro("fullname");
-        createUserBusiness.createuser(account, passordin, fullname);
-        createUserBusiness.goToOrgInfo();
-        createUserBusiness.goToelectOrg();
-        createUserBusiness.goToAddOrg();
-        createUserBusiness.goToSelectPrimaryOrg();
-        createUserBusiness.goTosaveUserButton();
-        createUserBusiness.goTosaveUserSureButton();
+        String tableDesc = proUtil.getPro("tableDesc");
+        createTableBusiness.createTable(tableDesc);
         driver.implicitlywait();
-        createUserBusiness.outAddUserIframe();
+        createTableBusiness.goToaddTableName();
         driver.implicitlywait();
-        createUserBusiness.goToUserManagerIframeMenu();
+        createTableBusiness.goToaddTableColumnButton();
         driver.implicitlywait();
-        String queryAccountBox = proUtil.getPro("account");
-        createUserBusiness.queryuser(queryAccountBox);
+        createTableBusiness.goToaddTableColumnIframe();
         driver.implicitlywait();
-        createUserBusiness.goTOQueryUser();
+        String filedDesc =proUtil.getPro("tableColumnFieldName");
+        createTableBusiness.createColumn(filedDesc);
+        driver.implicitlywait();
+        createTableBusiness.goToaddTableColumnFieldName();
+        driver.implicitlywait();
+        createTableBusiness.goToaddTableColumnSaveButton();
+        driver.implicitlywait();
+        createTableBusiness.goTogobackTableColumnButton();
+        driver.implicitlywait();
+        createTableBusiness.goToaddTableSaveButton();
+
         try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {
@@ -77,7 +78,7 @@ public class testCreateUserCase extends CaseBase {
 
 
     @AfterClass
-    public void createUserAfterClass(){
+    public void createTableAfterClass(){
         driver.stop();
     }
 }
