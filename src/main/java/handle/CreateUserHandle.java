@@ -43,10 +43,11 @@ public class CreateUserHandle {
     }
 
     //进入新增用户iframe页面
-    public void goToAddUserIframe(){driver.findIframeElement(createUserPage.getAddUserIfrme());}
+    public void goToAddUserIframe(){
+        createUserPage.findIframeElement(createUserPage.getAddUserIfrme());}
 
     //退出新增用户iframe页面
-    public void outAddUserFrame(){driver.outIframeElement();}
+    public void outAddUserFrame(){createUserPage.outIframeElement();}
 
     //进入基本信息页签
     public void clickBasicInfo(){
@@ -94,7 +95,9 @@ public class CreateUserHandle {
     }
 
     //保存用户成功确定按钮
-    public void clicksaveUserSureButton(){createUserPage.click(createUserPage.getSaveUserSureButtonElement());}
+    public void clicksaveUserSureButton(){
+        createUserPage.click(createUserPage.getSaveUserSureButtonElement());
+    }
 
    //输入账号查询数据
     public void sendKeyqueryAccountBox(String queryAccountBox){
@@ -102,6 +105,8 @@ public class CreateUserHandle {
     }
 
     //点击查询按钮
-    public void clickQueryUserButton(){createUserPage.click(createUserPage.getQueryUserButtonElement());}
+    public void clickQueryUserButton(){
+        createUserPage.click(createUserPage.getQueryUserButtonElement());
+    }
 
 }

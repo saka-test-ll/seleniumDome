@@ -47,12 +47,18 @@ public class CreateUserBusiness {
     }
 
     //切换进入新增用户iframe页面
-    public void goToAddUserIframe(){createUserHandle.goToAddUserIframe();}
+    public void goToAddUserIframe(){
+        createUserHandle.goToAddUserIframe();
+    }
 
     //切换退出新增用户iframen页面
-    public void outAddUserIframe(){createUserHandle.outAddUserFrame();}
+    public void outAddUserIframe(){
+        createUserHandle.outAddUserFrame();
+    }
 
-    public void goToBasicInfo(){createUserHandle.clickBasicInfo();}
+    public void goToBasicInfo(){
+        createUserHandle.clickBasicInfo();
+    }
 
     public void createuser(String account,String passwordin,String fullname){
         createUserHandle.sendKeyAccount(account);
@@ -60,21 +66,37 @@ public class CreateUserBusiness {
         createUserHandle.sendKeyfullName(fullname);
     }
     //进入组织信息
-    public void goToOrgInfo(){createUserHandle.clickOrgInfo();}
+    public void goToOrgInfo(){
+        createUserHandle.clickOrgInfo();
+    }
     //选择组织
-    public void goToelectOrg(){createUserHandle.clickSelectOrg();}
+    public void goToelectOrg(){
+        createUserHandle.clickSelectOrg();
+    }
     //添加组织
-    public void goToAddOrg(){createUserHandle.clickaddOrgButton();}
+    public void goToAddOrg(){
+        createUserHandle.clickaddOrgButton();
+    }
     //选择主组织
-    public void goToSelectPrimaryOrg(){createUserHandle.clickSelectPrimaryOrg();}
+    public void goToSelectPrimaryOrg(){
+        createUserHandle.clickSelectPrimaryOrg();
+    }
     //保存新增用户
-    public void goTosaveUserButton(){createUserHandle.clicksaveUserButton();}
+    public void goTosaveUserButton(){
+        createUserHandle.clicksaveUserButton();
+    }
     //保存用户成功后确定关闭弹出框
-    public void goTosaveUserSureButton(){createUserHandle.clicksaveUserSureButton();}
+    public void goTosaveUserSureButton(){
+        createUserHandle.clicksaveUserSureButton();
+    }
 
-    public void queryuser(String queryAccountBox){createUserHandle.sendKeyqueryAccountBox(queryAccountBox);}
+    public void queryuser(String queryAccountBox){
+        createUserHandle.sendKeyqueryAccountBox(queryAccountBox);
+    }
 
     //查询用户
-    public void goTOQueryUser(){createUserHandle.clickQueryUserButton();}
+    public void goTOQueryUser(){
+        createUserHandle.clickQueryUserButton();
+    }
 
 }

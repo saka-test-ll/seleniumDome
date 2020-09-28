@@ -60,12 +60,13 @@ public class CreateTableCase extends CaseBase {
         driver.implicitlywait();
         String filedDesc =proUtil.getPro("tableColumnFieldName");
         createTableBusiness.createColumn(filedDesc);
-        driver.implicitlywait();
-        createTableBusiness.goToaddTableColumnFieldName();
+//        driver.implicitlywait();
+//        createTableBusiness.goToaddTableColumnFieldName();
         driver.implicitlywait();
         createTableBusiness.goToaddTableColumnSaveButton();
         driver.implicitlywait();
         createTableBusiness.goTogobackTableColumnButton();
+        createTableBusiness.outaddTableColumnIframe();
         driver.implicitlywait();
         createTableBusiness.goToaddTableSaveButton();
 

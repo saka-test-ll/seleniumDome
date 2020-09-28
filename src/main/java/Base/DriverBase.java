@@ -62,7 +62,7 @@ public class DriverBase {
      *  封装切换退出iframe窗口
      */
     public WebDriver outIframeElement(){
-        return driver.switchTo().defaultContent();
+        return driver.switchTo().parentFrame();
     }
 
     /**

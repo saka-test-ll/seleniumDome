@@ -23,7 +23,6 @@ public class LoginBusiness {
      */
     public void login(String userName, String passWord) {
         if (loginHandle.assertLoginPage()) {
-
             loginHandle.sendKeyUsername(userName);
             loginHandle.sendKeyPassword(passWord);
             loginHandle.clickLoginButton();

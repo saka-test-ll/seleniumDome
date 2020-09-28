@@ -67,10 +67,10 @@ public class CreateTableBusiness {
     public void createColumn(String fieldDesc){
         createTableHandle.sendkeyaddTableColumnFieldDesc(fieldDesc);
     }
-    //点击“字段名称”字段，根据“字段描述”自动获取该字段值
-    public void  goToaddTableColumnFieldName(){
-        createTableHandle.clickaddTableColumnFieldName();
-    }
+//    //点击“字段名称”字段，根据“字段描述”自动获取该字段值
+//    public void  goToaddTableColumnFieldName(){
+//        createTableHandle.clickaddTableColumnFieldName();
+//    }
     //添加列的“保存”按钮
     public void goToaddTableColumnSaveButton(){
         createTableHandle.clickaddTableColumnSaveButton();
@@ -81,6 +81,6 @@ public class CreateTableBusiness {
     }
     //添加自定义表的“保存”按钮
     public void goToaddTableSaveButton(){
-        createTableHandle.clickaddTableButton();
+        createTableHandle.clickaddTableSaveButton();
     }
 }
