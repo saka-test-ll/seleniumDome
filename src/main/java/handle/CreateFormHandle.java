@@ -1,0 +1,133 @@
+package handle;
+
+import Base.DriverBase;
+import page.CreateFormPage;
+import page.CreateTablePage;
+
+public class CreateFormHandle {
+
+    public DriverBase driver;
+    public CreateFormPage createFormPage;
+
+    /**
+     * 构造方法
+     *
+     * @param driver
+     */
+    public CreateFormHandle(DriverBase driver) {
+        this.driver = driver;
+        createFormPage = new CreateFormPage(driver);
+    }
+
+    //点击流程管理Menu
+    public void clickflowManagerMenuForm() {
+        createFormPage.leftClickMouse(createFormPage.getFlowManagerMenuForm());
+    }
+
+    //点击表单管理Menu
+    public void clickformManagerMenuForm() {
+        createFormPage.leftClickMouse(createFormPage.getFormManagerMenuForm());
+    }
+
+    //点击自定义表单Menu
+    public void clickformMenu() {
+        createFormPage.leftClickMouse(createFormPage.getFormMenu());
+    }
+
+    //进入自定义表iframe页面
+    public void goToformIframe() {
+        createFormPage.findIframeElement(createFormPage.getFormIframe());
+    }
+
+    //退出自定义表iframe页面
+    public void outformIframe(){
+        driver.outIframeElement();
+    }
+
+    //点击新增自定义表单“添加”按钮
+    public void goToaddFormButton(){
+        createFormPage.click(createFormPage.getAddFormButton());
+    }
+
+    //进入添加表单Iframe页面
+    public void goToaddFormIframe(){
+        createFormPage.findIframeElement(createFormPage.getAddFormIframe());
+    }
+
+    //退出添加表单Iframe页面
+    public void outaddFormIframe(){
+        driver.outIframeElement();
+    }
+
+    //添加表单页面“表单标题”字段
+    public void sendkeyformSubject(String formSubject){
+        createFormPage.sendKeys(createFormPage.getFormSubject(),formSubject);
+    }
+
+    //点击“表单别名”字段，根据“表单标题”自动获取该字段值
+    public void clickformKey(){
+        createFormPage.leftClickMouse(createFormPage.getFormKey());
+    }
+
+    //点击添加表单页面“搜索”图标
+    public void clickserchTableIconButton(){
+        createFormPage.click(createFormPage.getSerchTableIconButton());
+    }
+
+    //进入添加表单时选择表Iframe
+    public void goToselectTableIframe(){
+        createFormPage.findIframeElement(createFormPage.getSelectTableIframe());
+    }
+
+    //退出添加表单时选择表Iframe
+    public void outselectTableIframe(){
+        driver.outIframeElement();
+    }
+
+    //选择表的form
+    //public void goToselectTableForm(){createFormPage.getSelectTableForm();}
+
+    //添加表单选择表页面查询条件“表名”
+    public void clickqueryTableName(){
+        createFormPage.click(createFormPage.getQueryTableName());
+    }
+    public void sendkeyqueryTableName(String queryTableName){
+        createFormPage.sendKeys(createFormPage.getQueryTableName(),queryTableName);
+    }
+
+    //添加表单选择表页面"查询"按钮
+    public void clickserchTableButton(){
+        createFormPage.click(createFormPage.getSerchTableButton());
+    }
+
+    //添加表单选择表页面勾选表
+    public void clickselectTable(){
+        createFormPage.leftClickMouse(createFormPage.getSelectTable());
+    }
+
+    //添加表单选择表页面勾选表确定按钮
+    public void clickchooseTableButton(){
+        createFormPage.click(createFormPage.getChooseTableButton());
+    }
+
+    //添加表单页面“下一步”按钮
+    public void clickchooseFormNextStepButton(){
+        createFormPage.click(createFormPage.getChooseFormNextStepButton());
+    }
+
+    //进入选择表单模板Iframe
+    public void goTochooseFormTemplateIframe(){
+        createFormPage.findIframeElement(createFormPage.getChooseFormTemplateIframe());
+    }
+
+    //退出选择表单模板Iframe
+    public void outchooseFormTemplateIframe(){
+        driver.outIframeElement();
+    }
+
+    //选择表单模板“下一步”按钮
+    public void clickchooseTemplateButton(){
+        createFormPage.click(createFormPage.getchooseTemplateButton());
+    }
+
+}

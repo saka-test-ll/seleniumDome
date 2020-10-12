@@ -19,7 +19,7 @@ public class CreateTablePage extends BasePage{
         super(driver);
     }
 
-    //获取菜单栏用户中心Element元素
+    //获取菜单栏流程管理Element元素
     public WebElement getFlowManagerMenu(){
         return element(GetByLocator.getLocator("flowManagerMenu"));
     }
@@ -74,10 +74,10 @@ public class CreateTablePage extends BasePage{
         return element(GetByLocator.getLocator("addTableColumnFieldDesc"));
     }
 
-//    //获取添加列页面“字段名称”输入框
-//    public WebElement getAddTableColumnFieldName(){
-//        return element(GetByLocator.getLocator("addTableColumnFieldName"));
-//    }
+    //获取添加列页面“字段名称”输入框
+    public WebElement getAddTableColumnFieldName(){
+        return element(GetByLocator.getLocator("addTableColumnFieldName"));
+    }
 
     //获取添加列字段后的保存按钮
     public WebElement getAddTableColumnSaveButton(){
@@ -92,6 +92,44 @@ public class CreateTablePage extends BasePage{
     //获取添加自定义表的保存按钮
     public WebElement getAddTableSaveButton(){
         return element(GetByLocator.getLocator("addTableSaveButton"));
+    }
+
+    //获取添加自定义表成功后弹出框的“确定”按钮
+    public WebElement getSaveTableSureButton(){
+        return element(GetByLocator.getLocator("saveTableSureButton"));
+    }
+
+    //获取自定义表页面“查询”用户按钮
+    public WebElement getQueryTableButton(){
+       return element(GetByLocator.getLocator("queryTableButton"));
+    }
+
+    //获取自定义表查询时输入表名元素
+    public WebElement getQueryTableNameBox(){
+        return element(GetByLocator.getLocator("queryTableNameBox"));
+    }
+
+    //获取鼠标悬停“生成表”
+    public WebElement getMoveGenerate(){
+        return element(GetByLocator.getLocator("moveGenerate"));
+    }
+    public WebElement getMoveGenerate2(){
+        return element(GetByLocator.getLocator("moveGenerate2"));
+    }
+
+    //获取发布自定义表的“生成表”按钮
+    public WebElement getGenerateTableButton(){
+        return element(GetByLocator.getLocator("generateTableButton"));
+    }
+
+    //获取是否确认生成表弹出框的“确定”按钮
+    public WebElement getTableGenerateSureButton(){
+        return element(GetByLocator.getLocator("tableGenerateSureButton"));
+    }
+
+    //获取生成表成功提示框的“确定”按钮
+    public WebElement getTableGenerateSucButton(){
+        return element(GetByLocator.getLocator("tableGenerateSucButton"));
     }
 
 }

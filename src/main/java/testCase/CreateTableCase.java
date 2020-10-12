@@ -6,12 +6,14 @@ import Utils.ProUtil;
 import business.CreateTableBusiness;
 import org.testng.annotations.*;
 
+
 public class CreateTableCase extends CaseBase {
 
     public DriverBase driver;
     public ProUtil proUtil;
     public HandleCookie handleCookie;
     public CreateTableBusiness createTableBusiness;
+
 
     @BeforeClass
     public void createTableBeforeClass(){
@@ -35,11 +37,11 @@ public class CreateTableCase extends CaseBase {
     }
 
     @Test()
-    public void addUser() {
+    public void addTable() {
         //进入添加用户界面、切换iframe页面
         createTableBusiness.goToflowManagerMenu();
         driver.implicitlywait();
-        createTableBusiness.goTOformManagerMenu();
+        createTableBusiness.goToformManagerMenu();
         driver.implicitlywait();
         createTableBusiness.goTotableMenu();
         driver.implicitlywait();
@@ -58,10 +60,10 @@ public class CreateTableCase extends CaseBase {
         driver.implicitlywait();
         createTableBusiness.goToaddTableColumnIframe();
         driver.implicitlywait();
-        String filedDesc =proUtil.getPro("tableColumnFieldName");
-        createTableBusiness.createColumn(filedDesc);
-//        driver.implicitlywait();
-//        createTableBusiness.goToaddTableColumnFieldName();
+        String addTableColumnFieldDesc =proUtil.getPro("tableColumnFieldDesc");
+        createTableBusiness.createColumn(addTableColumnFieldDesc);
+        driver.implicitlywait();
+        createTableBusiness.goToaddTableColumnFieldName();
         driver.implicitlywait();
         createTableBusiness.goToaddTableColumnSaveButton();
         driver.implicitlywait();
@@ -69,6 +71,28 @@ public class CreateTableCase extends CaseBase {
         createTableBusiness.outaddTableColumnIframe();
         driver.implicitlywait();
         createTableBusiness.goToaddTableSaveButton();
+        driver.implicitlywait();
+        createTableBusiness.goTosaveTableSureButton();
+        driver.implicitlywait();
+        createTableBusiness.outaddTableIframe();
+        driver.implicitlywait();
+        String queryTableName = proUtil.getPro("tableDesc");
+        createTableBusiness.queryTableName(queryTableName);
+        driver.implicitlywait();
+        createTableBusiness.goToqueryTableButton();
+        driver.implicitlywait();
+        createTableBusiness.goTomoveGenerate();
+        driver.implicitlywait();
+        createTableBusiness.goTomoveGenerate2();
+        driver.implicitlywait();
+        createTableBusiness.goTomoveGenerateButton();
+        driver.implicitlywait();
+        createTableBusiness.goTogenerateTable();
+        driver.implicitlywait();
+        createTableBusiness.goTotableGenerateSureButton();
+        driver.implicitlywait();
+        createTableBusiness.goTotableGenerateSucButton();
+
 
         try {
             Thread.sleep(3000);
@@ -78,8 +102,8 @@ public class CreateTableCase extends CaseBase {
     }
 
 
-    @AfterClass
+/*    @AfterClass
     public void createTableAfterClass(){
         driver.stop();
-    }
+    }*/
 }

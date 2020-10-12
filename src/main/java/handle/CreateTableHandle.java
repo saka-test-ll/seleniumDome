@@ -86,10 +86,10 @@ public class CreateTableHandle {
     public void sendkeyaddTableColumnFieldDesc(String addTableColumnFieldDesc){
         createTablePage.sendKeys(createTablePage.getAddTableColumnFieldDesc(),addTableColumnFieldDesc);
     }
-//    //点击“字段名称”字段，根据“字段描述”自动获取该字段值
-//    public void clickaddTableColumnFieldName(){
-//        createTablePage.leftClickMouse(createTablePage.getAddTableColumnFieldName());
-//    }
+    //点击“字段名称”字段，根据“字段描述”自动获取该字段值
+    public void clickaddTableColumnFieldName(){
+        createTablePage.leftClickMouse(createTablePage.getAddTableColumnFieldName());
+    }
 
     //点击添加列的“保存”按钮
     public void clickaddTableColumnSaveButton(){
@@ -105,4 +105,46 @@ public class CreateTableHandle {
     public void clickaddTableSaveButton(){
         createTablePage.click(createTablePage.getAddTableSaveButton());
     }
+
+   //点击添加自定义表成功弹出框的“确定”按钮
+    public void clicksaveTableSureButton(){
+        createTablePage.click(createTablePage.getSaveTableSureButton());
+    }
+
+    //点击自定义表页面“查询”用户按钮
+    public void clickqueryTableButton(){
+        createTablePage.click(createTablePage.getQueryTableButton());
+    }
+
+    //输入表名查询数据
+    public void sendKeyqueryTableNameBox(String queryTableNameBox){
+        createTablePage.sendKeys(createTablePage.getQueryTableNameBox(),queryTableNameBox);
+    }
+
+    //鼠标悬停到“生成表”按钮
+    public void movegenerate(){
+        createTablePage.moveToElement(createTablePage.getMoveGenerate());
+    }
+    public void moveGenerate2(){
+        createTablePage.moveToElement(createTablePage.getMoveGenerate2());
+    }
+
+    //鼠标点击“生成表”按钮
+    public void movegeneratebutton(){
+        createTablePage.moveToElement(createTablePage.getGenerateTableButton());
+    }
+    public void clickgenerateTableButton(){
+        createTablePage.click(createTablePage.getGenerateTableButton());
+    }
+
+    //点击生成表弹出框的“确定”按钮
+    public void clicktableGenerateSureButton(){
+        createTablePage.click(createTablePage.getTableGenerateSureButton());
+    }
+
+    //点击生成表成功提示框的“确定”按钮
+    public void clicktableGenerateSucButton(){
+        createTablePage.click(createTablePage.getTableGenerateSucButton());
+    }
+
 }
