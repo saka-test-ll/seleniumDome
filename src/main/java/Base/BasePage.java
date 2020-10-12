@@ -102,6 +102,11 @@ public class BasePage {
         driver.leftClickMouse(element);
     }
 
+    //鼠标拖拽操作
+    public void dragAction(WebElement source,WebElement target){
+        driver.dragAction(source,target);
+    }
+
     /**
      *  进入iframe页面
      */
