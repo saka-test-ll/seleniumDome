@@ -51,6 +51,11 @@ public class DriverBase {
         action.click(element).perform();
     }
 
+    //封装鼠标拖拽操作
+    public void dragAction(WebElement source,WebElement target){
+        action.dragAndDrop(source,target).perform();
+    }
+
     /**
      *  封装切换进入iframe窗口
      */
@@ -63,6 +68,20 @@ public class DriverBase {
      */
     public WebDriver outIframeElement(){
         return driver.switchTo().parentFrame();
+    }
+
+    /**
+     *  获取当前窗口
+     */
+    public String getWindowHandle(){
+        return driver.getWindowHandle();
+    }
+
+    /**
+     *  切换windows窗口
+     */
+    public void switchWindows(String name){
+        driver.switchTo().window(name);
     }
 
     /**
@@ -81,7 +100,7 @@ public class DriverBase {
 
    //封装浏览器隐式等待
     public void implicitlywait(){
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 
     //封装浏览器刷新当前窗口
