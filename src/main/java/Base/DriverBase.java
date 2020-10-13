@@ -6,6 +6,7 @@ import org.openqa.selenium.interactions.Actions;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
@@ -35,6 +36,12 @@ public class DriverBase {
     public WebElement findElement(By by){
         WebElement element = driver.findElement(by);
         return element;
+    }
+
+    //封装返回一组element元素方法
+    public List<WebElement> findElements(By by){
+        List<WebElement> elementList = driver.findElements(by);
+        return elementList;
     }
 
     /**

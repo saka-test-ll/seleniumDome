@@ -3,9 +3,9 @@ package Base;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import testCase.LoginCase;
+import java.util.List;
 
 /**
  *  封装页面可能用到的操作方法
@@ -36,6 +36,11 @@ public class BasePage {
             logger.error("未定位到"+ by + "元素");
             return null;
         }
+    }
+    //定位一组elements
+    public List<WebElement> elementList(By by){
+        List<WebElement> elements = driver.findElements(by);
+        return elements;
     }
 
     /**
