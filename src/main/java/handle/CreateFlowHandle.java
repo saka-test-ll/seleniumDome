@@ -10,7 +10,7 @@ public class CreateFlowHandle {
     public CreateFlowPage createFlowPage;
 
     /**
-     * ¹¹Ôì·½·¨
+     * æ„é€ æ–¹æ³•
      *
      * @param driver
      */
@@ -19,48 +19,114 @@ public class CreateFlowHandle {
         createFlowPage = new CreateFlowPage(driver);
     }
 
-    //µã»÷Á÷³Ì¹ÜÀíMenu
+    //ç‚¹å‡»æµç¨‹ç®¡ç†Menu
     public void clickflowManagerMenu() {
         createFlowPage.leftClickMouse(createFlowPage.getflowManagerMenu());
     }
 
-    //µã»÷Á÷³Ì¹ÜÀí×ÓMenu
+    //ç‚¹å‡»æµç¨‹ç®¡ç†å­Menu
     public void clickflowManagerMenu1() {
         createFlowPage.leftClickMouse(createFlowPage.getFormManagerMenu1());
     }
 
-    //µã»÷Á÷³Ì¶¨Òå¹ÜÀíMenu
+    //ç‚¹å‡»æµç¨‹å®šä¹‰ç®¡ç†Menu
     public void clickactDefModel() {
         createFlowPage.leftClickMouse(createFlowPage.getActDefModel());
     }
-    //½øÈëÁ÷³Ì¶¨Òå¹ÜÀíIframe
+    //è¿›å…¥æµç¨‹å®šä¹‰ç®¡ç†Iframe
     public void goToflowManagerIframe(){
         createFlowPage.findIframeElement(createFlowPage.getFlowManagerIframe());
     }
 
-    //µã»÷¡°ÔÚÏßÁ÷³ÌÉè¼Æ¡±°´Å¥
+    //ç‚¹å‡»â€œåœ¨çº¿æµç¨‹è®¾è®¡â€æŒ‰é’®
     public void clickcreateFlowButton() {
         createFlowPage.click(createFlowPage.getCreateFlowButton());
     }
 
-    //½øÈë×Ô¶¨Òå±íiframeÒ³Ãæ
+    //è¿›å…¥è‡ªå®šä¹‰è¡¨iframeé¡µé¢
     public void goTocreateFlowIframe() {
         createFlowPage.findIframeElement(createFlowPage.getCreateFlowIframe());
     }
 
-    //ÍË³ö×Ô¶¨Òå±íiframeÒ³Ãæ
+    //é€€å‡ºè‡ªå®šä¹‰è¡¨iframeé¡µé¢
     public void outformIframe() {
         driver.outIframeElement();
     }
 
-    //µã»÷¡°¿ªÊ¼ÊÂ¼ş¡±
+    //ç‚¹å‡»â€œå¼€å§‹äº‹ä»¶â€
     public void clickstartEvent(){
         createFlowPage.leftClickMouse(createFlowPage.getstartEvent());
     }
 
-    //µã»÷¡°´´½¨ÓÃ»§ÈÎÎñ¡±
+    //ç‚¹å‡»â€œåˆ›å»ºç”¨æˆ·ä»»åŠ¡â€
     public void clickcreateUserTaskImg(){
-        createFlowPage.leftClickMouse(createFlowPage.getcreateUserTaskImg());
+        createFlowPage.leftClickMouse(createFlowPage.getcreateUserTaskImg().get(0));
+    }
+
+    public void clickcreateUserTask0(){
+        createFlowPage.leftClickMouse(createFlowPage.getcreateUserTask().get(0));
+    }
+
+    public void clickcreateUserTask1(){
+        createFlowPage.leftClickMouse(createFlowPage.getcreateUserTask().get(1));
+    }
+
+    public void clickcreateUserTask2(){
+        createFlowPage.leftClickMouse(createFlowPage.getcreateUserTask().get(2));
+    }
+
+    //ç‚¹å‡»åˆ›å»ºç»“æŸä»»åŠ¡
+    public void clickendEventImg(){
+        createFlowPage.leftClickMouse(createFlowPage.getcreateUserTaskImg().get(1));
+    }
+
+    //ç‚¹å‡»â€œä¿å­˜â€æµç¨‹æŒ‰é’®
+    public void clicksaveFlowButton(){
+        createFlowPage.click(createFlowPage.getsaveFlowButton());
+    }
+
+    //ä¿å­˜æ¨¡å‹é¡µé¢â€œåç§°â€å­—æ®µ
+    public void sendkeyflowNameField(String flowNameField){
+        createFlowPage.sendKeys(createFlowPage.getflowNameField(),flowNameField);
+    }
+
+    //ä¿å­˜æ¨¡å‹é¡µé¢â€œkeyâ€å­—æ®µ
+    public void clickflowKeyField(){
+        createFlowPage.leftClickMouse(createFlowPage.getflowKeyField());
+    }
+
+    //ä¿å­˜æ¨¡å‹é¡µé¢â€œå‘å¸ƒâ€æŒ‰é’®
+    public void clickpublishFlowButton(){
+        createFlowPage.click(createFlowPage.getpublishFlowButton());
+    }
+
+    //æµç¨‹å®šä¹‰ç®¡ç†é¡µé¢æŸ¥è¯¢æ¡ä»¶â€œæ ‡é¢˜â€çš„è¾“å…¥æ¡†
+    public void sendkeyflowSubjectBox(String flowSubjectBox){
+        createFlowPage.sendKeys(createFlowPage.getflowSubjectBox(),flowSubjectBox);
+    }
+
+    //æµç¨‹å®šä¹‰ç®¡ç†é¡µé¢â€œæŸ¥è¯¢â€æŒ‰é’®
+    public void clickqueryFlowButton(){
+        createFlowPage.click(createFlowPage.getqueryFlowButton());
+    }
+
+    //æµç¨‹å®šä¹‰ç®¡ç†â€œè®¾ç½®â€ã€â€œå¯åŠ¨â€æŒ‰é’®
+    public void moveTooperateFlow(){
+        createFlowPage.moveToElement(createFlowPage.getoperateFlow());
+    }
+    public void moveTooperateFlow1(){
+        createFlowPage.moveToElement(createFlowPage.getoperateFlow1());
+    }
+    public void clickdesignFlowButton(){
+        createFlowPage.click(createFlowPage.getdesignFlowButton());
+    }
+    public void clickstartFlowButton(){
+        createFlowPage.click(createFlowPage.getstartFlowButton());
+    }
+
+    //è®¾ç½®æµç¨‹é¡µé¢çš„â€œè¡¨å•â€è®¾ç½®
+    public void clickdesignFlowForm(){
+        createFlowPage.leftClickMouse(createFlowPage.getdesignFlowForm());
     }
 
 }

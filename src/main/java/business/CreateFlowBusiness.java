@@ -9,18 +9,17 @@ import org.testng.annotations.*;
 import testCase.CaseBase;
 import Base.BasePage;
 
-
-
-public class CreateFlowBusiness {
+public class CreateFlowBusiness{
     public DriverBase driver;
+    public ProUtil proUtil;
     public CreateFlowHandle createFlowHandle;
-    public CreateFlowBusiness(DriverBase driver){
+    public CreateFlowBusiness(DriverBase driver) {
         this.driver = driver;
         createFlowHandle = new CreateFlowHandle(driver);
     }
 
-    public void addFlow() {
-        //½øÈëÔÚÏßÁ÷³ÌÉè¼Æ½çÃæ¡¢ÇĞ»»iframeÒ³Ãæ
+    //è¿›å…¥æµç¨‹ç®¡ç†èœå•åŠIframeé¡µé¢
+    public void goToFlowManager(){
         createFlowHandle.clickflowManagerMenu();
         driver.implicitlywait();
         createFlowHandle.clickflowManagerMenu1();
@@ -29,6 +28,10 @@ public class CreateFlowBusiness {
         driver.implicitlywait();
         createFlowHandle.goToflowManagerIframe();
         driver.implicitlywait();
+    }
+
+    //æ–°å¢æµç¨‹è®¾è®¡
+    public void addFlow() {
         createFlowHandle.clickcreateFlowButton();
         driver.implicitlywait();
         createFlowHandle.goTocreateFlowIframe();
@@ -36,5 +39,42 @@ public class CreateFlowBusiness {
         createFlowHandle.clickstartEvent();
         driver.implicitlywait();
         createFlowHandle.clickcreateUserTaskImg();
+        driver.implicitlywait();
+        createFlowHandle.clickcreateUserTask0();
+        driver.implicitlywait();
+        createFlowHandle.clickcreateUserTaskImg();
+        driver.implicitlywait();
+        createFlowHandle.clickcreateUserTask1();
+        driver.implicitlywait();
+        createFlowHandle.clickcreateUserTaskImg();
+        driver.implicitlywait();
+        createFlowHandle.clickcreateUserTask2();
+        driver.implicitlywait();
+        createFlowHandle.clickendEventImg();
+        driver.implicitlywait();
+        createFlowHandle.clicksaveFlowButton();
+        ProUtil proutil=  new ProUtil("src\\main\\resources\\loginTest.properties");
+        String flowNameField = proutil.getPro("flowSubject");
+        createFlowHandle.sendkeyflowNameField(flowNameField);
+        createFlowHandle.clickflowKeyField();
+        createFlowHandle.clickpublishFlowButton();
     }
+
+    //æŸ¥è¯¢æµç¨‹
+    public void queryFlow(){
+        ProUtil proutil=  new ProUtil("src\\main\\resources\\loginTest.properties");
+        String flowSubjectBox = proutil.getPro("flowSubject");
+        createFlowHandle.sendkeyflowSubjectBox(flowSubjectBox);
+        createFlowHandle.clickqueryFlowButton();
+    }
+
+    //è¿›å…¥ç®¡ç†ä¸‹çš„â€œè®¾ç½®é¡µé¢â€
+    public void designFlow(){
+        createFlowHandle.moveTooperateFlow();
+        createFlowHandle.moveTooperateFlow1();
+        createFlowHandle.clickdesignFlowButton();
+        createFlowHandle.clickdesignFlowForm();
+    }
+
 }
+
