@@ -3,6 +3,7 @@ package Base;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 
 import java.io.File;
 import java.io.IOException;
@@ -77,11 +78,24 @@ public class DriverBase {
         return driver.switchTo().parentFrame();
     }
 
-    /**
-     *  获取当前窗口
-     */
-    public String getWindowHandle(){
-        return driver.getWindowHandle();
+    //先把全部已经打开的窗口的句柄丢到一个集合中，然后取出来当前焦点所在的句柄，从集合中提出当前句柄，然后再切换到下一个句柄就可以了，切换到新Tab页后，就可以用webdriver进行后续的页面操作了
+    public void switchWindow() throws NoSuchWindowException,NoSuchWindowException{
+        //得到所有窗口的句柄
+        Set<String> handles =driver.getWindowHandles();
+        //获取当前窗口的句柄
+        String current =driver.getWindowHandle();
+        //不包括当前窗口
+        handles.remove(current);
+        //判断是否存在窗口
+        System.out.println(handles.size());
+        if(handles.size()>0){
+            try {
+                //定位窗口
+                driver.switchTo().window((handles.iterator().next()));
+            }catch (Exception e){
+                System.out.println(e.getMessage());
+            }
+        }
     }
 
     /**
@@ -90,6 +104,8 @@ public class DriverBase {
     public void switchWindows(String name){
         driver.switchTo().window(name);
     }
+
+    public void switchDefaultWindows(){driver.switchTo().defaultContent();}
 
     /**
      *  封装get方法
