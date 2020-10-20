@@ -3,14 +3,12 @@ package Utils;
 import java.io.*;
 import java.util.Properties;
 
+
 public class ProUtil {
 
     private Properties prop;
     private String filePath;
 
-    /**
-     * 构造方法
-     */
     public ProUtil(String filePath){
         this.filePath = filePath;
         this.prop = readProperties();
@@ -23,7 +21,7 @@ public class ProUtil {
         Properties properties = new Properties();
         try {
             InputStream inputStream = new FileInputStream(filePath);
-            BufferedInputStream in = new BufferedInputStream(inputStream);
+            BufferedReader in = new BufferedReader(new InputStreamReader(inputStream));
             properties.load(in);
         } catch (IOException e) {
             e.printStackTrace();
