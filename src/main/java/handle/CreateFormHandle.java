@@ -1,8 +1,12 @@
 package handle;
 
 import Base.DriverBase;
+import org.openqa.selenium.WebElement;
 import page.CreateFormPage;
 import page.CreateTablePage;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class CreateFormHandle {
 
@@ -10,124 +14,155 @@ public class CreateFormHandle {
     public CreateFormPage createFormPage;
 
     /**
-     * ¹¹Ôì·½·¨
+     * æ„é€ æ–¹æ³•
      *
-     * @param driver
+     *
      */
     public CreateFormHandle(DriverBase driver) {
         this.driver = driver;
         createFormPage = new CreateFormPage(driver);
     }
 
-    //µã»÷Á÷³Ì¹ÜÀíMenu
+    //ç‚¹å‡»æµç¨‹ç®¡ç†Menu
     public void clickflowManagerMenuForm() {
         createFormPage.leftClickMouse(createFormPage.getFlowManagerMenuForm());
     }
 
-    //µã»÷±íµ¥¹ÜÀíMenu
+    //ç‚¹å‡»è¡¨å•ç®¡ç†Menu
     public void clickformManagerMenuForm() {
         createFormPage.leftClickMouse(createFormPage.getFormManagerMenuForm());
     }
 
-    //µã»÷×Ô¶¨Òå±íµ¥Menu
+    //ç‚¹å‡»è‡ªå®šä¹‰è¡¨å•Menu
     public void clickformMenu() {
         createFormPage.leftClickMouse(createFormPage.getFormMenu());
     }
 
-    //½øÈë×Ô¶¨Òå±íiframeÒ³Ãæ
+    //è¿›å…¥è‡ªå®šä¹‰è¡¨iframeé¡µé¢
     public void goToformIframe() {
         createFormPage.findIframeElement(createFormPage.getFormIframe());
     }
 
-    //ÍË³ö×Ô¶¨Òå±íiframeÒ³Ãæ
+    //é€€å‡ºè‡ªå®šä¹‰è¡¨iframeé¡µé¢
     public void outformIframe(){
         driver.outIframeElement();
     }
 
-    //µã»÷ĞÂÔö×Ô¶¨Òå±íµ¥¡°Ìí¼Ó¡±°´Å¥
+    //ç‚¹å‡»æ–°å¢è‡ªå®šä¹‰è¡¨å•â€œæ·»åŠ â€æŒ‰é’®
     public void goToaddFormButton(){
         createFormPage.click(createFormPage.getAddFormButton());
     }
 
-    //½øÈëÌí¼Ó±íµ¥IframeÒ³Ãæ
+    //è¿›å…¥æ·»åŠ è¡¨å•Iframeé¡µé¢
     public void goToaddFormIframe(){
         createFormPage.findIframeElement(createFormPage.getAddFormIframe());
     }
 
-    //ÍË³öÌí¼Ó±íµ¥IframeÒ³Ãæ
+    //é€€å‡ºæ·»åŠ è¡¨å•Iframeé¡µé¢
     public void outaddFormIframe(){
         driver.outIframeElement();
     }
 
-    //Ìí¼Ó±íµ¥Ò³Ãæ¡°±íµ¥±êÌâ¡±×Ö¶Î
+    //æ·»åŠ è¡¨å•é¡µé¢â€œè¡¨å•æ ‡é¢˜â€å­—æ®µ
     public void sendkeyformSubject(String formSubject){
         createFormPage.sendKeys(createFormPage.getFormSubject(),formSubject);
     }
 
-    //µã»÷¡°±íµ¥±ğÃû¡±×Ö¶Î£¬¸ù¾İ¡°±íµ¥±êÌâ¡±×Ô¶¯»ñÈ¡¸Ã×Ö¶ÎÖµ
+    //ç‚¹å‡»â€œè¡¨å•åˆ«åâ€å­—æ®µï¼Œæ ¹æ®â€œè¡¨å•æ ‡é¢˜â€è‡ªåŠ¨è·å–è¯¥å­—æ®µå€¼
     public void clickformKey(){
         createFormPage.leftClickMouse(createFormPage.getFormKey());
     }
 
-    //µã»÷Ìí¼Ó±íµ¥Ò³Ãæ¡°ËÑË÷¡±Í¼±ê
+    //ç‚¹å‡»æ·»åŠ è¡¨å•é¡µé¢â€œæœç´¢â€å›¾æ ‡
     public void clickserchTableIconButton(){
         createFormPage.click(createFormPage.getSerchTableIconButton());
     }
 
-    //½øÈëÌí¼Ó±íµ¥Ê±Ñ¡Ôñ±íIframe
+    //è¿›å…¥æ·»åŠ è¡¨å•æ—¶é€‰æ‹©è¡¨Iframe
     public void goToselectTableIframe(){
         createFormPage.findIframeElement(createFormPage.getSelectTableIframe());
     }
 
-    //ÍË³öÌí¼Ó±íµ¥Ê±Ñ¡Ôñ±íIframe
+    //é€€å‡ºæ·»åŠ è¡¨å•æ—¶é€‰æ‹©è¡¨Iframe
     public void outselectTableIframe(){
         driver.outIframeElement();
     }
 
-    //Ñ¡Ôñ±íµÄform
-    //public void goToselectTableForm(){createFormPage.getSelectTableForm();}
-
-    //Ìí¼Ó±íµ¥Ñ¡Ôñ±íÒ³Ãæ²éÑ¯Ìõ¼ş¡°±íÃû¡±
-    public void clickqueryTableName(){
-        createFormPage.click(createFormPage.getQueryTableName());
-    }
+    //æ·»åŠ è¡¨å•é€‰æ‹©è¡¨é¡µé¢æŸ¥è¯¢æ¡ä»¶â€œè¡¨åâ€
     public void sendkeyqueryTableName(String queryTableName){
         createFormPage.sendKeys(createFormPage.getQueryTableName(),queryTableName);
     }
 
-    //Ìí¼Ó±íµ¥Ñ¡Ôñ±íÒ³Ãæ"²éÑ¯"°´Å¥
+    //æ·»åŠ è¡¨å•é€‰æ‹©è¡¨é¡µé¢"æŸ¥è¯¢"æŒ‰é’®
     public void clickserchTableButton(){
         createFormPage.click(createFormPage.getSerchTableButton());
     }
 
-    //Ìí¼Ó±íµ¥Ñ¡Ôñ±íÒ³Ãæ¹´Ñ¡±í
+    //æ·»åŠ è¡¨å•é€‰æ‹©è¡¨é¡µé¢å‹¾é€‰è¡¨
     public void clickselectTable(){
         createFormPage.leftClickMouse(createFormPage.getSelectTable());
     }
 
-    //Ìí¼Ó±íµ¥Ñ¡Ôñ±íÒ³Ãæ¹´Ñ¡±íÈ·¶¨°´Å¥
+    //æ·»åŠ è¡¨å•é€‰æ‹©è¡¨é¡µé¢å‹¾é€‰è¡¨ç¡®å®šæŒ‰é’®
     public void clickchooseTableButton(){
         createFormPage.click(createFormPage.getChooseTableButton());
     }
 
-    //Ìí¼Ó±íµ¥Ò³Ãæ¡°ÏÂÒ»²½¡±°´Å¥
+    //æ·»åŠ è¡¨å•é¡µé¢â€œä¸‹ä¸€æ­¥â€æŒ‰é’®
     public void clickchooseFormNextStepButton(){
         createFormPage.click(createFormPage.getChooseFormNextStepButton());
     }
 
-    //½øÈëÑ¡Ôñ±íµ¥Ä£°åIframe
+    //è¿›å…¥é€‰æ‹©è¡¨å•æ¨¡æ¿Iframe
     public void goTochooseFormTemplateIframe(){
         createFormPage.findIframeElement(createFormPage.getChooseFormTemplateIframe());
     }
 
-    //ÍË³öÑ¡Ôñ±íµ¥Ä£°åIframe
+    //é€€å‡ºé€‰æ‹©è¡¨å•æ¨¡æ¿Iframe
     public void outchooseFormTemplateIframe(){
         driver.outIframeElement();
     }
 
-    //Ñ¡Ôñ±íµ¥Ä£°å¡°ÏÂÒ»²½¡±°´Å¥
+    //é€‰æ‹©è¡¨å•æ¨¡æ¿â€œä¸‹ä¸€æ­¥â€æŒ‰é’®
     public void clickchooseTemplateButton(){
         createFormPage.click(createFormPage.getchooseTemplateButton());
     }
 
+    //è¡¨å•è®¾è®¡é¡µé¢å°†å·¦ä¾§çš„å­—æ®µä¾æ¬¡æ·»åŠ åˆ°è¡¨å•ä¸­
+//    List<WebElement> addFieldToForm = new ArrayList<WebElement>();
+//    public void findaddFieldToFormElement() {
+//        addFieldToForm = createFormPage.getaddFieldToForm();
+//    }
+//    public void clickaddFieldToForm0(){createFormPage.leftClickMouse(addFieldToForm.get(0));}
+//    public void clickaddFieldToForm1(){createFormPage.leftClickMouse(addFieldToForm.get(1));}
+
+    public void clickaddFieldToForm0(){createFormPage.leftClickMouse(createFormPage.getaddFieldToForm().get(0));}
+    public void clickaddFieldToForm1(){createFormPage.leftClickMouse(createFormPage.getaddFieldToForm().get(1));}
+
+    //è¡¨å•è®¾è®¡é¡µé¢çš„â€œä¿å­˜â€æŒ‰é’®
+    public void clickFormDesignPagesaveButton(){createFormPage.click(createFormPage.getFormDesignPagesaveButton());}
+
+    //ä¿å­˜è¡¨å•è®¾è®¡åä¸å†åšå…¶ä»–æ“ä½œçš„â€œå–æ¶ˆâ€æŒ‰é’®
+    public void clickcancelContinueFormDesignButton(){createFormPage.click(createFormPage.getcancelContinueFormDesignButton());}
+
+    //è¡¨å•æŸ¥è¯¢æ¡ä»¶â€œè¡¨å•æ ‡é¢˜â€
+    public void sendkeyformSubjectBox(String formSubjectBox){
+        createFormPage.sendKeys(createFormPage.getformSubjectBox(),formSubjectBox);
+    }
+
+    //è¡¨å•â€œæŸ¥è¯¢â€æŒ‰é’®
+    public void clickqueryFormButton(){
+        createFormPage.click(createFormPage.getqueryFormButton());
+    }
+
+    //è‡ªå®šä¹‰è¡¨å•çš„â€œå‘å¸ƒæŒ‰é’®â€
+    public void movemovePublishForm(){createFormPage.moveToElement(createFormPage.getmovePublishForm());}
+    public void movemovePublishForm1(){createFormPage.moveToElement(createFormPage.getmovePublishForm1());}
+    public void clickpublishFormButton(){createFormPage.click(createFormPage.getpublishFormButton());}
+
+    //è‡ªå®šä¹‰è¡¨å•æ˜¯å¦ç¡®è®¤å‘å¸ƒæç¤ºæ¡†çš„â€œç¡®å®šâ€æŒ‰é’®
+    public void clicksurePublishFormButton(){createFormPage.click(createFormPage.getsurePublishFormButton());}
+
+    //å‘å¸ƒè‡ªå®šä¹‰è¡¨å•æˆåŠŸæç¤ºæ¡†çš„â€œç¡®å®šâ€æŒ‰é’®
+    public void clicksurePublishFormSucButton(){createFormPage.click(createFormPage.getsurePublishFormSucButton());}
 }

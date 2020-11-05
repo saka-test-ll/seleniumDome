@@ -6,108 +6,135 @@ import Utils.GetByLocator;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import java.util.List;
+
 /**
- *  ÔªËØ²ã
+ *  å…ƒç´ å±‚
  */
 public class CreateFormPage extends BasePage {
 
     /**
-     * ¹¹Ôì·½·¨
+     * æ„é€ æ–¹æ³•
      *
-     * @param driver
+     *
      */
     public CreateFormPage(DriverBase driver) {
         super(driver);
     }
 
-    //»ñÈ¡²Ëµ¥À¸Á÷³Ì¹ÜÀíElementÔªËØ
+    //è·å–èœå•æ æµç¨‹ç®¡ç†Elementå…ƒç´ 
     public WebElement getFlowManagerMenuForm() {
         return element(GetByLocator.getLocator("flowManagerMenuform"));
     }
 
-    //»ñÈ¡±íµ¥¹ÜÀíElementÔªËØ
+    //è·å–è¡¨å•ç®¡ç†Elementå…ƒç´ 
     public WebElement getFormManagerMenuForm() {
         return element(GetByLocator.getLocator("formManagerMenuform"));
     }
 
-    //»ñÈ¡×Ô¶¨Òå±íµ¥²Ëµ¥Ïî
+    //è·å–è‡ªå®šä¹‰è¡¨å•èœå•é¡¹
     public WebElement getFormMenu(){
         return element(GetByLocator.getLocator("formMenu"));
     }
 
-    //»ñÈ¡×Ô¶¨Òå±íµ¥Iframe
+    //è·å–è‡ªå®šä¹‰è¡¨å•Iframe
     public WebElement getFormIframe(){
         return element(GetByLocator.getLocator("formIframe"));
     }
 
-    //»ñÈ¡ĞÂÔö×Ô¶¨Òå±íµ¥¡°Ìí¼Ó¡±°´Å¥
+    //è·å–æ–°å¢è‡ªå®šä¹‰è¡¨å•â€œæ·»åŠ â€æŒ‰é’®
     public WebElement getAddFormButton(){
         return element(GetByLocator.getLocator("addFormButton"));
     }
 
-    //»ñÈ¡Ìí¼Ó±íµ¥IframeÒ³Ãæ
+    //è·å–æ·»åŠ è¡¨å•Iframeé¡µé¢
     public WebElement getAddFormIframe(){
         return element(GetByLocator.getLocator("addFormIframe"));
     }
 
-    //»ñÈ¡Ìí¼Ó±íµ¥Ò³Ãæ¡°±íµ¥±êÌâ¡±×Ö¶Î
+    //è·å–æ·»åŠ è¡¨å•é¡µé¢â€œè¡¨å•æ ‡é¢˜â€å­—æ®µ
     public WebElement getFormSubject(){
         return element(GetByLocator.getLocator("formSubject"));
     }
 
-    //»ñÈ¡Ìí¼Ó±íµ¥Ò³Ãæ¡°±íµ¥±ğÃû¡±×Ö¶Î
+    //è·å–æ·»åŠ è¡¨å•é¡µé¢â€œè¡¨å•åˆ«åâ€å­—æ®µ
     public WebElement getFormKey(){
         return element(GetByLocator.getLocator("formKey"));
     }
 
-    //»ñÈ¡Ìí¼Ó±íµ¥Ò³Ãæ¡°ËÑË÷¡±Í¼±ê
+    //è·å–æ·»åŠ è¡¨å•é¡µé¢â€œæœç´¢â€å›¾æ ‡
     public WebElement getSerchTableIconButton(){
         return element(GetByLocator.getLocator("serchTableIconButton"));
     }
 
-    //»ñÈ¡Ìí¼Ó±íµ¥Ê±Ñ¡Ôñ±íIframe
+    //è·å–æ·»åŠ è¡¨å•æ—¶é€‰æ‹©è¡¨Iframe
     public WebElement getSelectTableIframe(){
         return element(GetByLocator.getLocator("selectTableIframe"));
     }
 
-/*    //»ñÈ¡Ñ¡Ôñ±íµÄform
-    public WebElement getSelectTableForm(){
-        return element(GetByLocator.getLocator("selectTableForm"));
-    }*/
-
-    //Ìí¼Ó±íµ¥Ñ¡Ôñ±íÒ³Ãæ²éÑ¯Ìõ¼ş¡°±íÃû¡±
+    //æ·»åŠ è¡¨å•é€‰æ‹©è¡¨é¡µé¢æŸ¥è¯¢æ¡ä»¶â€œè¡¨åâ€
     public WebElement getQueryTableName(){
         return element(GetByLocator.getLocator("queryTableName"));
     }
 
-    //Ìí¼Ó±íµ¥Ñ¡Ôñ±íÒ³Ãæ"²éÑ¯"°´Å¥
+    //æ·»åŠ è¡¨å•é€‰æ‹©è¡¨é¡µé¢"æŸ¥è¯¢"æŒ‰é’®
     public WebElement getSerchTableButton(){
         return element(GetByLocator.getLocator("serchTableButton"));
     }
 
-    //Ìí¼Ó±íµ¥Ñ¡Ôñ±íÒ³Ãæ¹´Ñ¡±í
+    //æ·»åŠ è¡¨å•é€‰æ‹©è¡¨é¡µé¢å‹¾é€‰è¡¨
     public WebElement getSelectTable(){
         return element(GetByLocator.getLocator("selectTable"));
     }
 
-    //Ìí¼Ó±íµ¥Ñ¡Ôñ±íÒ³Ãæ¹´Ñ¡±íÈ·¶¨°´Å¥
+    //æ·»åŠ è¡¨å•é€‰æ‹©è¡¨é¡µé¢å‹¾é€‰è¡¨ç¡®å®šæŒ‰é’®
     public WebElement getChooseTableButton(){
         return element(GetByLocator.getLocator("chooseTableButton"));
     }
 
-    //Ìí¼Ó±íµ¥Ò³Ãæ¡°ÏÂÒ»²½¡±°´Å¥
+    //æ·»åŠ è¡¨å•é¡µé¢â€œä¸‹ä¸€æ­¥â€æŒ‰é’®
     public WebElement getChooseFormNextStepButton(){
         return element(GetByLocator.getLocator("chooseFormNextStepButton"));
     }
 
-    //Ñ¡Ôñ±íµ¥Ä£°åIframe
+    //é€‰æ‹©è¡¨å•æ¨¡æ¿Iframe
     public WebElement getChooseFormTemplateIframe(){
         return element(GetByLocator.getLocator("chooseFormTemplateIframe"));
     }
 
-    //Ñ¡Ôñ±íµ¥Ä£°å¡°ÏÂÒ»²½¡±°´Å¥
+    //é€‰æ‹©è¡¨å•æ¨¡æ¿â€œä¸‹ä¸€æ­¥â€æŒ‰é’®
     public WebElement getchooseTemplateButton(){
         return element(GetByLocator.getLocator("chooseTemplateButton"));
     }
+
+    //è¡¨å•è®¾è®¡é¡µé¢å°†å·¦ä¾§çš„å­—æ®µä¾æ¬¡æ·»åŠ åˆ°è¡¨å•ä¸­
+    public List<WebElement> getaddFieldToForm(){return elementList(GetByLocator.getLocator("addFieldToForm"));}
+
+    //è¡¨å•è®¾è®¡é¡µé¢çš„â€œä¿å­˜â€æŒ‰é’®
+    public WebElement getFormDesignPagesaveButton(){return element(GetByLocator.getLocator("FormDesignPagesaveButton"));}
+
+    //ä¿å­˜è¡¨å•è®¾è®¡åä¸å†åšå…¶ä»–æ“ä½œçš„â€œå–æ¶ˆâ€æŒ‰é’®
+    public WebElement getcancelContinueFormDesignButton(){return element(GetByLocator.getLocator("cancelContinueFormDesignButton"));}
+
+    //è¡¨å•æŸ¥è¯¢æ¡ä»¶â€œè¡¨å•æ ‡é¢˜â€
+    public WebElement getformSubjectBox(){
+        return element(GetByLocator.getLocator("formSubjectBox"));
+    }
+
+    //è¡¨å•â€œæŸ¥è¯¢â€æŒ‰é’®
+    public WebElement getqueryFormButton(){
+        return element(GetByLocator.getLocator("queryFormButton"));
+    }
+
+    //è‡ªå®šä¹‰è¡¨å•çš„â€œå‘å¸ƒæŒ‰é’®â€
+    public WebElement getmovePublishForm(){return element(GetByLocator.getLocator("movePublishForm"));}
+    public WebElement getmovePublishForm1(){return element(GetByLocator.getLocator("movePublishForm1"));}
+    public WebElement getpublishFormButton(){return element(GetByLocator.getLocator("publishFormButton"));}
+
+    //è‡ªå®šä¹‰è¡¨å•æ˜¯å¦ç¡®è®¤å‘å¸ƒæç¤ºæ¡†çš„â€œç¡®å®šâ€æŒ‰é’®
+    public WebElement getsurePublishFormButton(){return element(GetByLocator.getLocator("surePublishFormButton"));}
+
+    //å‘å¸ƒè‡ªå®šä¹‰è¡¨å•æˆåŠŸæç¤ºæ¡†çš„â€œç¡®å®šâ€æŒ‰é’®
+    public WebElement getsurePublishFormSucButton(){return element(GetByLocator.getLocator("surePublishFormSucButton"));}
 
 }

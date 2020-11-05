@@ -1,119 +1,123 @@
 package business;
 
 import Base.DriverBase;
+import Utils.HandleCookie;
+import Utils.ProUtil;
 import handle.CreateFormHandle;
+import handle.CreateFormHandle;
+import handle.HomeHandle;
+import handle.HomeHandle;
+
 
 public class CreateFormBusiness {
+    public DriverBase driver;
+    public ProUtil proUtil;
     public CreateFormHandle createFormHandle;
-    public CreateFormBusiness(DriverBase driver){
+    public HomeHandle homeHandle;
+    public CreateFormBusiness(DriverBase driver) {
+        this.driver = driver;
         createFormHandle = new CreateFormHandle(driver);
+        homeHandle = new HomeHandle(driver);
     }
-    //µã»÷Á÷³Ì¹ÜÀíMenu
-    public void goToflowManagerMenu() {
+
+    //è¿›å…¥æµç¨‹ç®¡ç†èœå•åŠIframeé¡µé¢
+    public void goToFlowManager() {
+        homeHandle.clickcloseImWindow();
+        driver.implicitlywait();
         createFormHandle.clickflowManagerMenuForm();
-    }
-    //µã»÷±íµ¥¹ÜÀíMenu
-    public void goToformManagerMenu(){
+        driver.implicitlywait();
         createFormHandle.clickformManagerMenuForm();
-    }
-    //µã»÷×Ô¶¨Òå±íµ¥Menu
-    public void goToformMenu(){
+        driver.implicitlywait();
         createFormHandle.clickformMenu();
-    }
-    //½øÈë×Ô¶¨Òå±íµ¥Iframe
-    public void goToformIframe(){
+        driver.implicitlywait();
         createFormHandle.goToformIframe();
+        driver.implicitlywait();
     }
 
-    //ÍË³ö×Ô¶¨Òå±íµ¥Iframe
-    public void outformIframe(){
-        createFormHandle.outformIframe();
-    }
-
-    //µã»÷ĞÂÔö×Ô¶¨Òå±íµ¥¡°Ìí¼Ó¡±°´Å¥
-    public void goToaddFormButton(){
+    //æ–°å¢è‡ªå®šä¹‰è¡¨å•
+    public void addForm() {
         createFormHandle.goToaddFormButton();
-    }
-
-    //½øÈëÌí¼Ó±íµ¥IframeÒ³Ãæ
-    public void goToaddFormIframe(){
         createFormHandle.goToaddFormIframe();
-    }
-
-    //ÍË³öÌí¼Ó±íµ¥IframeÒ³Ãæ
-    public void outaddFormIframe(){
-        createFormHandle.outaddFormIframe();
-    }
-
-    //Ìí¼Ó±íµ¥Ò³Ãæ¡°±íµ¥±êÌâ¡±×Ö¶Î
-    public void createForm(String formSubject){
+        ProUtil proutil=  new ProUtil("src\\main\\resources\\loginTest.properties");
+        String formSubject = proutil.getPro("formSubjectValue");
         createFormHandle.sendkeyformSubject(formSubject);
-    }
-
-    //µã»÷¡°±íµ¥±ğÃû¡±×Ö¶Î£¬¸ù¾İ¡°±íµ¥±êÌâ¡±×Ô¶¯»ñÈ¡¸Ã×Ö¶ÎÖµ
-    public void goToformKey(){
         createFormHandle.clickformKey();
-    }
-
-    //µã»÷Ìí¼Ó±íµ¥Ò³Ãæ¡°ËÑË÷¡±Í¼±ê
-    public void goToserchTableIconButton(){
         createFormHandle.clickserchTableIconButton();
-    }
-
-    //½øÈëÌí¼Ó±íµ¥Ê±Ñ¡Ôñ±íIframe
-    public void goToselectTableIframe(){
+        createFormHandle.outaddFormIframe();
         createFormHandle.goToselectTableIframe();
-    }
-
-    //ÍË³öÌí¼Ó±íµ¥Ê±Ñ¡Ôñ±íIframe
-    public void outselectTableIframe(){
-        createFormHandle.outselectTableIframe();
-    }
-
-    //Ñ¡Ôñ±íµÄform
-/*    public void goToselectTableForm(){
-        createFormHandle.goToselectTableForm();
-    }*/
-
-    //Ìí¼Ó±íµ¥Ñ¡Ôñ±íÒ³Ãæ²éÑ¯Ìõ¼ş¡°±íÃû¡±
-    public void goToclickqueryTableName(){createFormHandle.clickqueryTableName();}
-    public void createChooseTable(String queryTableName){
+        String queryTableName = proutil.getPro("tableDesc");
         createFormHandle.sendkeyqueryTableName(queryTableName);
-    }
-
-    //Ìí¼Ó±íµ¥Ñ¡Ôñ±íÒ³Ãæ"²éÑ¯"°´Å¥
-    public void goToserchTableButton(){
-        createFormHandle.clickserchTableButton();
-    }
-
-    //Ìí¼Ó±íµ¥Ñ¡Ôñ±íÒ³Ãæ¹´Ñ¡±í
-    public void goToselectTable(){
+          createFormHandle.clickserchTableButton();
         createFormHandle.clickselectTable();
-    }
-
-    //Ìí¼Ó±íµ¥Ñ¡Ôñ±íÒ³Ãæ¹´Ñ¡±íÈ·¶¨°´Å¥
-    public void goTochooseTableButton(){
         createFormHandle.clickchooseTableButton();
-    }
-
-    //Ìí¼Ó±íµ¥Ò³Ãæ¡°ÏÂÒ»²½¡±°´Å¥
-    public void goTochooseFormNextStepButton(){
+         createFormHandle.outselectTableIframe();
+        createFormHandle.goToaddFormIframe();
         createFormHandle.clickchooseFormNextStepButton();
-    }
-
-    //½øÈëÑ¡Ôñ±íµ¥Ä£°åIframe
-    public void goTochooseFormTemplateIframe(){
+        createFormHandle.outaddFormIframe();
         createFormHandle.goTochooseFormTemplateIframe();
-    }
-
-    //ÍË³öÑ¡Ôñ±íµ¥Ä£°åIframe
-    public void outchooseFormTemplateIframe(){
-        createFormHandle.outchooseFormTemplateIframe();
-    }
-
-    //Ñ¡Ôñ±íµ¥Ä£°å¡°ÏÂÒ»²½¡±°´Å¥
-    public void goTochooseTemplateButton(){
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         createFormHandle.clickchooseTemplateButton();
+        driver.implicitlywait();
+        createFormHandle.outchooseFormTemplateIframe();
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        driver.switchWindow();
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+//        createFormHandle.findaddFieldToFormElement();
+        createFormHandle.clickaddFieldToForm0();
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        createFormHandle.clickaddFieldToForm1();
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        createFormHandle.clickFormDesignPagesaveButton();
+        createFormHandle.clickcancelContinueFormDesignButton();
+        driver.switchOldwindows();
     }
 
+    //æŸ¥è¯¢è‡ªå®šä¹‰è¡¨å•
+    public void queryForm(){
+        createFormHandle.goToformIframe();
+        driver.implicitlywait();
+        ProUtil proutil=  new ProUtil("src\\main\\resources\\loginTest.properties");
+        String queryTableName = proutil.getPro("formSubjectValue");
+        createFormHandle.sendkeyformSubjectBox(queryTableName);
+        createFormHandle.clickqueryFormButton();
+    }
+
+    //
+    public void publishForm(){
+        createFormHandle.movemovePublishForm();
+        createFormHandle.movemovePublishForm1();
+        createFormHandle.clickpublishFormButton();
+        createFormHandle.clicksurePublishFormButton();
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        createFormHandle.clicksurePublishFormSucButton();
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 }

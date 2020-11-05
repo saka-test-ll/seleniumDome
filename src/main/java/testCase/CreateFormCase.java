@@ -3,7 +3,10 @@ package testCase;
 import Base.DriverBase;
 import Utils.HandleCookie;
 import Utils.ProUtil;
+import business.CreateFlowBusiness;
 import business.CreateFormBusiness;
+import handle.CreateFlowHandle;
+import handle.CreateFormHandle;
 import org.testng.annotations.*;
 
 
@@ -13,14 +16,13 @@ public class CreateFormCase extends CaseBase {
     public ProUtil proUtil;
     public HandleCookie handleCookie;
     public CreateFormBusiness createFormBusiness;
+    public CreateFormHandle createFormHandle;
 
 
     @BeforeClass
     public void createFormBeforeClass() {
         this.driver = InitDriver("chrowe");
-        driver.implicitlywait();
         proUtil = new ProUtil("src\\main\\resources\\loginTest.properties");
-        driver.implicitlywait();
         createFormBusiness = new CreateFormBusiness(driver);
         driver.implicitlywait();
         handleCookie = new HandleCookie(driver);
@@ -33,47 +35,29 @@ public class CreateFormCase extends CaseBase {
         driver.implicitlywait();
         driver.getUrl(proUtil.getPro("homeURL"));
         driver.windowMax();
-        driver.implicitlywait();
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
-    @Test()
-    public void addTable() {
-        //Ω¯»ÎÃÌº””√ªßΩÁ√Ê°¢«–ªªiframe“≥√Ê
-        createFormBusiness.goToflowManagerMenu();
-        driver.implicitlywait();
-        createFormBusiness.goToformManagerMenu();
-        driver.implicitlywait();
-        createFormBusiness.goToformMenu();
-        driver.implicitlywait();
-        createFormBusiness.goToformIframe();
-        driver.implicitlywait();
-        createFormBusiness.goToaddFormButton();
-        driver.implicitlywait();
-        createFormBusiness.goToaddFormIframe();
-        driver.implicitlywait();
-        String formSubject =proUtil.getPro("formSubject");
-        createFormBusiness.createForm(formSubject);
-        driver.implicitlywait();
-        createFormBusiness.goToformKey();
-        driver.implicitlywait();
-        createFormBusiness.goToserchTableIconButton();
-        driver.implicitlywait();
-        createFormBusiness.goToselectTableIframe();
-        driver.implicitlywait();
-        createFormBusiness.goToclickqueryTableName();
-        driver.implicitlywait();
-        String queryTableName = proUtil.getPro("tableName");
-        createFormBusiness.createChooseTable(queryTableName);
-        driver.implicitlywait();
-        createFormBusiness.goToserchTableButton();
-        driver.implicitlywait();
-        createFormBusiness.goToselectTable();
-        driver.implicitlywait();
-        createFormBusiness.goTochooseTableButton();
-        driver.implicitlywait();
-        createFormBusiness.goTochooseFormNextStepButton();
-        createFormBusiness.goTochooseFormTemplateIframe();
-        createFormBusiness.goTochooseTemplateButton();
+    //Ê∑ªÂä†Ëá™ÂÆö‰πâË°®
+    @Test
+    public void addForm(){
+        createFormBusiness.goToFlowManager();
+        createFormBusiness.addForm();
+    }
 
+    //Êü•ËØ¢„ÄÅÂèëÂ∏ÉËá™ÂÆö‰πâË°®
+    @Test
+    public void publishForm(){
+        createFormBusiness.queryForm();
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        createFormBusiness.publishForm();
     }
 }
