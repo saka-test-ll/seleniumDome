@@ -1,101 +1,58 @@
 package business;
 
 import Base.DriverBase;
+import Utils.ProUtil;
 import handle.CreateUserHandle;
+import handle.HomeHandle;
 
 public class CreateUserBusiness {
-
+    public DriverBase driver;
+    public ProUtil proUtil;
     public CreateUserHandle createUserHandle;
-
-    public CreateUserBusiness(DriverBase driver){
+    public HomeHandle homeHandle;
+    public CreateUserBusiness(DriverBase driver) {
+        this.driver = driver;
         createUserHandle = new CreateUserHandle(driver);
+        homeHandle = new HomeHandle(driver);
     }
 
-    /**
-     *  点击用户中心
-     */
-    public void goToUserCenterMenu(){
+    //关闭IM聊天窗口，进入用户管理菜单及Iframe页面
+    public void goToCreateUserIframe(){
+        driver.implicitlywait();
         createUserHandle.clickuserCenterMenu();
-    }
-
-    /**
-     *  点击用户管理
-     */
-    public void goToUserManagerMenu(){
         createUserHandle.clickuserManagerMenu();
-    }
-
-    /**
-     *  切换进入iframe页面
-     */
-    public void goToUserManagerIframeMenu(){
         createUserHandle.goToUserManagerIframe();
     }
 
-    /**
-     *  切换退出iframe页面
-     */
-    public void outUserManagerIframeMenu(){
-        createUserHandle.outUserManagerIframe();
-    }
-
-    /**
-     *  进入用户新增界面
-     */
-    public void goToAddUserManagerMenu(){
+    //新增用户
+    public void createUser(){
         createUserHandle.clickaddUserButton();
-    }
-
-    //切换进入新增用户iframe页面
-    public void goToAddUserIframe(){
         createUserHandle.goToAddUserIframe();
-    }
-
-    //切换退出新增用户iframen页面
-    public void outAddUserIframe(){
-        createUserHandle.outAddUserFrame();
-    }
-
-    public void goToBasicInfo(){
+        driver.implicitlywait();
         createUserHandle.clickBasicInfo();
-    }
-
-    public void createuser(String account,String passwordin,String fullname){
+        driver.implicitlywait();
+        ProUtil proutil=  new ProUtil("src\\main\\resources\\loginTest.properties");
+        String account = proutil.getPro("accountValue");
         createUserHandle.sendKeyAccount(account);
+        String passwordin = proutil.getPro("passwordValue");
         createUserHandle.sendKeypasswordin(passwordin);
-        createUserHandle.sendKeyfullName(fullname);
-    }
-    //进入组织信息
-    public void goToOrgInfo(){
+        String fullName = proutil.getPro("fullnameValue");
+        createUserHandle.sendKeyfullName(fullName);
         createUserHandle.clickOrgInfo();
-    }
-    //选择组织
-    public void goToelectOrg(){
         createUserHandle.clickSelectOrg();
-    }
-    //添加组织
-    public void goToAddOrg(){
         createUserHandle.clickaddOrgButton();
-    }
-    //选择主组织
-    public void goToSelectPrimaryOrg(){
         createUserHandle.clickSelectPrimaryOrg();
-    }
-    //保存新增用户
-    public void goTosaveUserButton(){
         createUserHandle.clicksaveUserButton();
-    }
-    //保存用户成功后确定关闭弹出框
-    public void goTosaveUserSureButton(){
+        createUserHandle.outAddUserFrame();
         createUserHandle.clicksaveUserSureButton();
     }
 
-    public void queryuser(String queryAccountBox){
-        createUserHandle.sendKeyqueryAccountBox(queryAccountBox);
-    }
-
     //查询用户
-    public void goTOQueryUser(){
+    public void queryUser(){
+        createUserHandle.goToUserManagerIframe();
+        ProUtil proutil=  new ProUtil("src\\main\\resources\\loginTest.properties");
+        String queryAccountBox = proutil.getPro("accountValue");
+        createUserHandle.sendKeyqueryAccountBox(queryAccountBox);
         createUserHandle.clickQueryUserButton();
     }
 
