@@ -33,77 +33,41 @@ public class CreateTableCase extends CaseBase {
         driver.implicitlywait();
         driver.getUrl(proUtil.getPro("homeURL"));
         driver.windowMax();
-        driver.implicitlywait();
-    }
-
-    @Test()
-    public void addTable() {
-        //进入添加用户界面、切换iframe页面
-        createTableBusiness.goToflowManagerMenu();
-        driver.implicitlywait();
-        createTableBusiness.goToformManagerMenu();
-        driver.implicitlywait();
-        createTableBusiness.goTotableMenu();
-        driver.implicitlywait();
-        createTableBusiness.goTotableIframe();
-        driver.implicitlywait();
-        createTableBusiness.goToaddTableButton();
-        driver.implicitlywait();
-        createTableBusiness.goToaddTableIframe();
-        driver.implicitlywait();
-        String tableDesc = proUtil.getPro("tableDesc");
-        createTableBusiness.createTable(tableDesc);
-        driver.implicitlywait();
-        createTableBusiness.goToaddTableName();
-        driver.implicitlywait();
-        createTableBusiness.goToaddTableColumnButton();
-        driver.implicitlywait();
-        createTableBusiness.goToaddTableColumnIframe();
-        driver.implicitlywait();
-        String addTableColumnFieldDesc =proUtil.getPro("tableColumnFieldDesc");
-        createTableBusiness.createColumn(addTableColumnFieldDesc);
-        driver.implicitlywait();
-        createTableBusiness.goToaddTableColumnFieldName();
-        driver.implicitlywait();
-        createTableBusiness.goToaddTableColumnSaveButton();
-        driver.implicitlywait();
-        createTableBusiness.goTogobackTableColumnButton();
-        createTableBusiness.outaddTableColumnIframe();
-        driver.implicitlywait();
-        createTableBusiness.goToaddTableSaveButton();
-        driver.implicitlywait();
-        createTableBusiness.goTosaveTableSureButton();
-        driver.implicitlywait();
-        createTableBusiness.outaddTableIframe();
-        driver.implicitlywait();
-        String queryTableName = proUtil.getPro("tableDesc");
-        createTableBusiness.queryTableName(queryTableName);
-        driver.implicitlywait();
-        createTableBusiness.goToqueryTableButton();
-        driver.implicitlywait();
-        createTableBusiness.goTomoveGenerate();
-        driver.implicitlywait();
-        createTableBusiness.goTomoveGenerate2();
-        driver.implicitlywait();
-        createTableBusiness.goTomoveGenerateButton();
-        driver.implicitlywait();
-        createTableBusiness.goTogenerateTable();
-        driver.implicitlywait();
-        createTableBusiness.goTotableGenerateSureButton();
-        driver.implicitlywait();
-        createTableBusiness.goTotableGenerateSucButton();
-
-
         try {
-            Thread.sleep(3000);
+            Thread.sleep(4000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
 
+    //新增自定义表单
+    @Test
+    public void addTable() {
+        createTableBusiness.goToCreateTableIframe();
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        createTableBusiness.CreateTable();
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e1) {
+            e1.printStackTrace();
+        }
+    }
 
-/*    @AfterClass
+    //查询、发布自定义表单
+    @Test
+    public void publishTable(){
+        createTableBusiness.queryTable();
+        createTableBusiness.publishTable();
+    }
+
+
+
+   @AfterClass
     public void createTableAfterClass(){
         driver.stop();
-    }*/
+    }
 }
