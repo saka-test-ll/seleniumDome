@@ -20,5 +20,8 @@ public class HomeHandle {
         return homePage.getText(homePage.getLoginUsername());
     }
 
+    //关闭IM聊天窗口
+    public void clickcloseImWindow(){homePage.leftClickMouse(homePage.getcloseImWindow());}
+
 }
 

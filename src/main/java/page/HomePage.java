@@ -23,6 +23,7 @@ public class HomePage extends BasePage {
         return element(GetByLocator.getLocator("loginUsername"));
     }
 
-
+    //关闭IM聊天窗口
+    public WebElement getcloseImWindow(){return element(GetByLocator.getLocator("closeImWindow"));}
 
 }
