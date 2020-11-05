@@ -34,14 +34,15 @@ public class CreateFlowCase extends CaseBase {
         driver.getUrl(proUtil.getPro("homeURL"));
         driver.windowMax();
         try {
-            Thread.sleep(3000);
+            Thread.sleep(5000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
 
+    //新增并发布流程
     @Test
-    public void FlowDesign() {
+    public void AddFlowDesign() {
         createFlowBusiness.goToFlowManager();
         createFlowBusiness.addFlow();
         try {
@@ -51,16 +52,33 @@ public class CreateFlowCase extends CaseBase {
         }
     }
 
+    //查询流程
     @Test
     public void queryFlow(){
         createFlowBusiness.goToFlowManager();
         createFlowBusiness.queryFlow();
     }
 
+    //设置流程表单
     @Test
-    public void designFlow(){
+    public void designFlowForm(){
         createFlowBusiness.goToFlowManager();
         createFlowBusiness.queryFlow();
-        createFlowBusiness.designFlow();
+        createFlowBusiness.designFlowForm();
+    }
+
+    @Test
+    public void designFlowPerson(){
+        createFlowBusiness.goToFlowManager();
+        createFlowBusiness.queryFlow();
+        createFlowBusiness.designFlowPerson();
+    }
+
+    //调试程序启动流程页面可以关闭，正常执行启动流程页面未关闭
+    @Test
+    public void startFlow(){
+        createFlowBusiness.goToFlowManager();
+        createFlowBusiness.queryFlow();
+        createFlowBusiness.startFlow();
     }
 }

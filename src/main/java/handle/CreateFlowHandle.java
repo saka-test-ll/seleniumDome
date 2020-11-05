@@ -1,8 +1,12 @@
 package handle;
 
 import Base.DriverBase;
+import org.openqa.selenium.WebElement;
 import page.CreateFlowPage;
 import page.CreateTablePage;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class CreateFlowHandle {
 
@@ -12,7 +16,7 @@ public class CreateFlowHandle {
     /**
      * 构造方法
      *
-     * @param driver
+     *
      */
     public CreateFlowHandle(DriverBase driver) {
         this.driver = driver;
@@ -43,13 +47,15 @@ public class CreateFlowHandle {
         createFlowPage.click(createFlowPage.getCreateFlowButton());
     }
 
-    //进入自定义表iframe页面
+    //获取新增流程Iframe
     public void goTocreateFlowIframe() {
         createFlowPage.findIframeElement(createFlowPage.getCreateFlowIframe());
     }
 
-    //退出自定义表iframe页面
-    public void outformIframe() {
+    /**
+     * 退出新增流程Iframe
+     */
+    public void outflowIframe() {
         driver.outIframeElement();
     }
 
@@ -66,11 +72,9 @@ public class CreateFlowHandle {
     public void clickcreateUserTask0(){
         createFlowPage.leftClickMouse(createFlowPage.getcreateUserTask().get(0));
     }
-
     public void clickcreateUserTask1(){
         createFlowPage.leftClickMouse(createFlowPage.getcreateUserTask().get(1));
     }
-
     public void clickcreateUserTask2(){
         createFlowPage.leftClickMouse(createFlowPage.getcreateUserTask().get(2));
     }
@@ -128,5 +132,91 @@ public class CreateFlowHandle {
     public void clickdesignFlowForm(){
         createFlowPage.leftClickMouse(createFlowPage.getdesignFlowForm());
     }
+
+    //设置全局表单为在线表单
+    public void clickselectFormBox(){createFlowPage.leftClickMouse(createFlowPage.getselectFormBox());}
+    public void clickselectOnlineForm(){createFlowPage.leftClickMouse(createFlowPage.getselectOnlineForm());}
+
+    //选择全局表单的具体表单
+    public void clickselectFlowFormIcon(){createFlowPage.leftClickMouse(createFlowPage.getselectFlowFormIcon());}
+
+    //进入选择表单的Iframe
+    public void goToselectFlowFormIframe(){createFlowPage.findIframeElement(createFlowPage.getselectFlowFormIframe());}
+    //退出选择表单的Iframe
+    public void outselectFlowFormIframe(){driver.outIframeElement();}
+
+    //选择表单页面的查询条件“标题”
+    public void sendkeyflowFormSubject(String flowFormSubject){createFlowPage.sendKeys(createFlowPage.getflowFormSubject(),flowFormSubject);}
+
+    //选择表单页面的"查询"按钮
+    public void clickqueryFlowFormButton(){createFlowPage.click(createFlowPage.getqueryFlowFormButton());}
+
+    //选择表单页面--选择具体的表单
+    public void clickselectFlowForm(){createFlowPage.click(createFlowPage.getselectFlowForm());}
+
+    //选择表单页面--选择具体的表单后的“选择”按钮
+    public void clickselectFlowFormButton(){createFlowPage.click(createFlowPage.getselectFlowFormButton());}
+
+    //设置完流程的表单后，“保存”按钮
+    public void clicksaveFlowFormButton(){createFlowPage.click(createFlowPage.getsaveFlowFormButton());}
+
+    //设置表单成功提示框的确定按钮
+    public void clicksureFlowFormSucButton(){createFlowPage.click(createFlowPage.getsureFlowFormSucButton());}
+
+    /**
+     * 设置流程页面的“人员”设置
+     */
+    public void clickdesignFlowPerson(){createFlowPage.leftClickMouse(createFlowPage.getdesignFlowPerson());}
+
+    //进入设置流程人员页面的配置人员Iframe
+    public void goToflowConfigPersonIframe() {
+        createFlowPage.findIframeElement(createFlowPage.getflowConfigPersonIframe());
+    }
+    public void goToflowConfigPersonIframe1() {
+        createFlowPage.findIframeElement(createFlowPage.getflowConfigPersonIframe1());
+    }
+    public void goToflowConfigPersonIframe2() {
+        createFlowPage.findIframeElement(createFlowPage.getflowConfigPersonIframe2());
+    }
+
+    //退出设置流程人员页面的配置人员Iframe
+    public void outflowConfigPersonIframe(){
+        driver.outIframeElement();
+    }
+
+    /**
+     * 设置流程人员页面的“添加”人员按钮
+     */
+//    List<WebElement>   addBtns = new ArrayList<WebElement>();
+//    public void findflowAddPersonButtonElement() {
+//        addBtns = createFlowPage.getflowAddPersonButton();
+//    }
+//    public void clickflowAddPersonButton0(){ createFlowPage.click(addBtns.get(0)); }
+//    public void clickflowAddPersonButton1(){ createFlowPage.click(addBtns.get(1)); }
+//    public void clickflowAddPersonButton2(){ createFlowPage.click(addBtns.get(2)); }
+////    public void clickflowAddPersonButton0(){ createFlowPage.click(createFlowPage.getflowAddPersonButton().get(0)); }
+////    public void clickflowAddPersonButton1(){ createFlowPage.click(createFlowPage.getflowAddPersonButton1().get(1)); }
+////    public void clickflowAddPersonButton2(){ createFlowPage.click(createFlowPage.getflowAddPersonButton2().get(2)); }
+        public void clickflowAddPersonButton0(){
+            createFlowPage.click(createFlowPage.getflowAddPersonButton().get(0));
+        }
+        public void clickflowAddPersonButton1(){
+            createFlowPage.click(createFlowPage.getflowAddPersonButton().get(1));
+        }
+        public void clickflowAddPersonButton2(){
+            createFlowPage.click(createFlowPage.getflowAddPersonButton().get(2));
+        }
+
+    //设置流程人员页面的配置用户类型的"保存"按钮
+    public void clickflowConfigPersonSaveButton(){createFlowPage.click(createFlowPage.getflowConfigPersonSaveButton());}
+
+    //启动流程的Iframe页面
+    public void goTostartFlowIframe(){createFlowPage.findIframeElement(createFlowPage.getstartFlowIframe());}
+
+    //启动流程页面的“启动流程”按钮
+    public void clickstartFlowButton1(){createFlowPage.click(createFlowPage.getstartFlowButton1());}
+
+    //启动流程成功后弹出框的确定按钮
+    public void clickflowSucSureButton(){createFlowPage.click(createFlowPage.getflowSucSureButton());}
 
 }
