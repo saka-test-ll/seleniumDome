@@ -7,6 +7,7 @@ import org.openqa.selenium.support.ui.Select;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
@@ -83,9 +84,9 @@ public class DriverBase {
         //得到所有窗口的句柄
         Set<String> handles =driver.getWindowHandles();
         //获取当前窗口的句柄
-        String current =driver.getWindowHandle();
+        String currentWindow =driver.getWindowHandle();
         //不包括当前窗口
-        handles.remove(current);
+        handles.remove(currentWindow);
         //判断是否存在窗口
         System.out.println(handles.size());
         if(handles.size()>0){
@@ -96,6 +97,40 @@ public class DriverBase {
                 System.out.println(e.getMessage());
             }
         }
+    }
+
+    //封装根据句柄切换到原来窗口的方法
+    public void switchOldwindows(){
+        //封装切换窗口句柄
+        Set<String> winHandels = driver.getWindowHandles(); //得到当前窗口的set集合
+        List<String> handle = new ArrayList<String>(winHandels); //将set集合存入list对象
+        driver.switchTo().window(handle.get(0)); //切换到原窗口
+    }
+
+    //封装通过title切换窗口
+    public boolean switchToWindowTitle(String windowTitle){
+        boolean flag = false;
+        try {
+            String currentHandle = driver.getWindowHandle();
+            Set<String> handles = driver.getWindowHandles();
+            for (String s : handles) {
+                if (s.equals(currentHandle))
+                    continue;
+                else {
+                    driver.switchTo().window(s);
+                    if (driver.getTitle().contains(windowTitle)) {
+                        flag = true;
+                        System.out.println("Switch to window: " + windowTitle + " successfully!");
+                        break; }
+                    else
+                        continue;
+                }
+            }
+        } catch (NoSuchWindowException e) {
+            System.out.printf("Window:" + windowTitle+ " cound not found!", e.fillInStackTrace());
+            flag = false;
+        }
+        return flag;
     }
 
     /**
